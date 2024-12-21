@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../CSS_assignment/style.css">
+	<title>React</title>
+</head>
+
+<body>
+	<section>
+		<h1>Basic Interview Questions of React</h1>
+
+		<div>
+			<h2>1. What is React, and why is it used?</h2>
+			<p>
+				<b>ANS:</b> React is a JavaScript library developed by Facebook for building user interfaces,
+				particularly single-page applications (SPAs). It allows developers to create reusable UI components,
+				making the development process more efficient. React uses a virtual DOM to improve performance by
+				minimizing direct interactions with the real DOM.
+			</p>
+		</div>
+
+		<div>
+			<h2>2. What is JSX, and why is it preferred in React?</h2>
+			<p>
+				<b>ANS:</b> JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to write HTML-like
+				code within JavaScript. It’s preferred in React because it makes the code more readable and easy to
+				understand. JSX enables a seamless integration of UI components with JavaScript logic, improving the
+				development experience.
+			</p>
+		</div>
+
+		<div>
+			<h2>3. How does JSX differ from HTML?</h2>
+			<p>
+				<b>ANS:</b> JSX looks similar to HTML but has key differences. In JSX, attributes like `class` are
+				written as `className`, and `for` becomes `htmlFor`. Additionally, JSX requires all tags to be closed
+				(e.g., `<img />`), and JavaScript expressions must be enclosed in curly braces `{}`.
+			</p>
+		</div>
+
+		<div>
+			<h2>4. What are components in React?</h2>
+			<p>
+				<b>ANS:</b> Components are the building blocks of React applications. A component is a JavaScript
+				function or class that accepts input (called "props") and returns a React element (UI) to be rendered.
+				Components can be either functional or class-based and can be reused throughout the app.
+			</p>
+		</div>
+
+		<div>
+			<h2>5. What is the difference between functional and class components?</h2>
+			<p>
+				<b>ANS:</b> Functional components are simpler and are defined as functions that accept props and return
+				JSX. Class components, on the other hand, are defined using ES6 classes, and they include additional
+				features such as lifecycle methods and state management (before React Hooks were introduced).
+			</p>
+		</div>
+
+		<div>
+			<h2>6. What is a single-page application (SPA), and how does React enable it?</h2>
+			<p>
+				<b>ANS:</b> A single-page application (SPA) is a type of web application where all content is loaded on
+				a single page, and navigating between different sections of the app does not require reloading the
+				entire page. React enables this by rendering components dynamically and managing the browser’s URL with
+				the `React Router`, avoiding page reloads.
+			</p>
+		</div>
+
+		<div>
+			<h2>7. What are props in React?</h2>
+			<p>
+				<b>ANS:</b> Props (short for properties) are read-only inputs passed from a parent component to a child
+				component. They allow data to be shared between components in a React app, making the components dynamic
+				and reusable.
+			</p>
+		</div>
+
+		<div>
+			<h2>8. How is state different from props?</h2>
+			<p>
+				<b>ANS:</b> Props are immutable and passed from parent to child components, while state is local to a
+				component and can be modified within that component. State is used to manage data that can change over
+				time, whereas props are used to pass data down to child components.
+			</p>
+		</div>
+
+		<div>
+			<h2>9. How can you pass data from one component to another in React?</h2>
+			<p>
+				<b>ANS:</b> Data can be passed from one component to another using props. The parent component sends
+				data to a child component by including the data in the child’s prop, and the child can access it via
+				`props`.
+			</p>
+		</div>
+
+		<div>
+			<h2>10. What is the significance of the `key` prop in lists?</h2>
+			<p>
+				<b>ANS:</b> The `key` prop is used to uniquely identify elements in a list. React uses the `key` to
+				efficiently update and re-render the list when changes occur. Without a unique key, React would not be
+				able to track which items have changed, resulting in unnecessary re-renders.
+			</p>
+		</div>
+
+		<div>
+			<h2>11. How do you handle events in React?</h2>
+			<p>
+				<b>ANS:</b> In React, events are handled using event handlers, which are passed as props to components.
+				The syntax is similar to regular JavaScript events, but with a few differences: event names are written
+				in camelCase (e.g., `onClick`, `onChange`), and you pass the handler as a function (e.g., `<button
+					onClick={handleClick}>`).
+			</p>
+		</div>
+
+		<div>
+			<h2>12. What are controlled and uncontrolled components in React?</h2>
+			<p>
+				<b>ANS:</b> A controlled component is a form element whose value is controlled by the state of the
+				component. An uncontrolled component, on the other hand, maintains its own state, and React does not
+				control its value directly. Controlled components are often preferred because they provide more control
+				over form data.
+			</p>
+		</div>
+
+		<div>
+			<h2>13. What is a React fragment, and why would you use it?</h2>
+			<p>
+				<b>ANS:</b> A React fragment is a lightweight wrapper for groups of elements. It allows you to return
+				multiple elements from a component without adding an extra node to the DOM. It’s useful when you want to
+				group elements together without introducing unnecessary divs.
+			</p>
+		</div>
+
+		<div>
+			<h2>14. How do you conditionally render elements in React?</h2>
+			<p>
+				<b>ANS:</b> Conditional rendering in React can be done using JavaScript operators like `if`, `&&`, or
+				the ternary operator. For example, you can conditionally render components based on a boolean value or
+				state.
+			</p>
+			<pre>
+			{
+			  isLoggedIn ? <LogoutButton /> : <LoginButton />
+			}
+		  </pre>
+		</div>
+
+		<div>
+			<h2>15. What are React Hooks? Name a few commonly used hooks.</h2>
+			<p>
+				<b>ANS:</b> React Hooks are functions that let you use React state and lifecycle features in functional
+				components. Some commonly used hooks include:
+				- `useState()` – for managing state in functional components.
+				- `useEffect()` – for running side effects in functional components.
+				- `useContext()` – for using context in functional components.
+				- `useRef()` – for creating mutable references.
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<h1>Intermediate Interview Questions of React</h1>
+
+		<div>
+			<h2>1. Explain the useState Hook.</h2>
+			<p>
+				<b>ANS:</b> The `useState` hook is used to add state management to functional components. It returns an
+				array with two elements: the current state value and a function to update it. You can initialize state
+				with a default value, and the state can be updated by calling the updater function.
+			</p>
+		</div>
+
+		<div>
+			<h2>2. How does the useEffect Hook work?</h2>
+			<p>
+				<b>ANS:</b> The `useEffect` hook allows you to perform side effects in functional components, such as
+				data fetching, subscriptions, or manually changing the DOM. It runs after every render by default, but
+				you can control when it runs by passing a dependency array as the second argument. If the array is
+				empty, it runs only once after the initial render.
+			</p>
+		</div>
+
+		<div>
+			<h2>3. How can you make an API call in React?</h2>
+			<p>
+				<b>ANS:</b> You can make an API call in React using the `useEffect` hook for side effects and the
+				`fetch` function or libraries like `axios` to make the request. After the data is fetched, it can be
+				stored in the component’s state using the `useState` hook.
+			</p>
+		</div>
+
+		<div>
+			<h2>4. What are Higher-Order Components (HOCs)? Give an example.</h2>
+			<p>
+				<b>ANS:</b> A Higher-Order Component (HOC) is a function that takes a component and returns a new
+				component with additional props or functionality. HOCs are used for code reuse and to add common logic
+				to multiple components.
+				<br />Example:
+			<pre>
+			  const withLoading = (WrappedComponent) => {
+				return function HOC(props) {
+				  if (props.isLoading) {
+					return <div>Loading...</div>;
+				  }
+				  return <WrappedComponent {...props} />;
+				};
+			  };
+			</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>5. Explain the use of React Context API.</h2>
+			<p>
+				<b>ANS:</b> The React Context API allows you to share state or data globally across the entire component
+				tree without the need to pass props down manually at each level. It consists of a `Provider` to provide
+				the data and a `Consumer` to access it, though now it's commonly accessed using the `useContext` hook in
+				functional components.
+			</p>
+		</div>
+
+		<div>
+			<h2>6. How does the Context API differ from props drilling?</h2>
+			<p>
+				<b>ANS:</b> Props drilling is the process of passing data from a parent component to a deeply nested
+				child component by passing props through intermediate components. This can lead to cluttered code. The
+				Context API avoids props drilling by providing a way to pass data directly to any component in the
+				component tree without having to pass props manually at each level.
+			</p>
+		</div>
+
+		<div>
+			<h2>7. What are refs, and when should you use them in React?</h2>
+			<p>
+				<b>ANS:</b> Refs are used to directly reference and interact with DOM elements or React components. They
+				are commonly used for scenarios like focusing input elements, triggering animations, or accessing the
+				values of uncontrolled components. Refs are created using `React.createRef()` or the `useRef` hook in
+				functional components.
+			</p>
+		</div>
+
+		<div>
+			<h2>8. What is the useRef Hook, and how is it different from createRef?</h2>
+			<p>
+				<b>ANS:</b> The `useRef` hook is used to persist values across renders in functional components, and it
+				can also be used to reference DOM elements. Unlike `createRef`, which creates a new ref each time the
+				component re-renders, `useRef` returns the same ref object during the component’s lifecycle, making it
+				suitable for keeping mutable values that don’t trigger re-renders.
+			</p>
+		</div>
+
+		<div>
+			<h2>9. What is the purpose of `React.memo`?</h2>
+			<p>
+				<b>ANS:</b> `React.memo` is a higher-order component used to memoize functional components. It prevents
+				unnecessary re-renders by checking if the props have changed. If the props are the same as the previous
+				render, React will skip re-rendering the component.
+			</p>
+		</div>
+
+		<div>
+			<h2>10. Explain React lifecycle methods.</h2>
+			<p>
+				<b>ANS:</b> React lifecycle methods are special methods in class components that allow you to perform
+				actions at different stages of a component’s life. Key lifecycle methods include:
+				- `componentDidMount` – Called after the component is mounted (first rendered).
+				- `componentDidUpdate` – Called after the component updates due to state or props changes.
+				- `componentWillUnmount` – Called before the component is removed from the DOM.
+			</p>
+		</div>
+
+		<div>
+			<h2>11. What are `componentDidMount` and `componentWillUnmount`, and when are they used?</h2>
+			<p>
+				<b>ANS:</b>
+				- `componentDidMount`: This method is called once the component has been rendered to the screen. It’s
+				often used for making API calls or setting up subscriptions.
+				- `componentWillUnmount`: This method is called just before the component is removed from the DOM. It’s
+				used to clean up resources like subscriptions or timers to prevent memory leaks.
+			</p>
+		</div>
+
+		<div>
+			<h2>12. Explain the useCallback Hook and why it is useful.</h2>
+			<p>
+				<b>ANS:</b> The `useCallback` hook returns a memoized version of a callback function. It helps prevent
+				unnecessary re-creations of functions during re-renders, especially when passing functions down to child
+				components, improving performance. It only re-creates the function when its dependencies change.
+			</p>
+		</div>
+
+		<div>
+			<h2>13. How is the useMemo Hook used in React?</h2>
+			<p>
+				<b>ANS:</b> The `useMemo` hook is used to memoize the result of a calculation. It returns a cached
+				value, re-calculating the result only when its dependencies change. This is useful for optimizing
+				expensive computations to avoid recalculating on every render.
+			</p>
+		</div>
+
+		<div>
+			<h2>14. What are controlled components in forms?</h2>
+			<p>
+				<b>ANS:</b> Controlled components are form elements (like input fields) whose values are controlled by
+				React state. The value of the input is set by the state, and any changes to the input are handled by
+				state-updating functions. This gives React complete control over the form data, making it easier to
+				manage and validate.
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<h1>React Router Questions</h1>
+
+		<div>
+			<h2>1. What is React Router, and why is it used?</h2>
+			<p>
+				<b>ANS:</b> React Router is a standard library for routing in React applications. It facilitates
+				navigation between different views or components in a single-page application (SPA) without requiring a
+				full page reload. It is used to manage URLs, handle browser history, and enable seamless navigation
+				within an application.
+			</p>
+		</div>
+
+		<div>
+			<h2>2. Explain the difference between BrowserRouter, HashRouter, and MemoryRouter.</h2>
+			<p>
+				<b>ANS:</b>
+				- **`BrowserRouter`**: Uses the HTML5 history API for navigation. It maintains clean URLs without hash
+				fragments. Requires server-side configuration for proper URL handling.
+				- **`HashRouter`**: Uses the hash portion of the URL (`#`) to simulate navigation. It is easy to use and
+				does not require server-side support, making it suitable for static sites.
+				- **`MemoryRouter`**: Stores the navigation history in memory rather than in the browser’s address bar.
+				It is useful for testing or non-URL-based navigation scenarios.
+			</p>
+		</div>
+
+		<div>
+			<h2>3. How do you handle navigation in React?</h2>
+			<p>
+				<b>ANS:</b> Navigation in React can be handled using the `react-router-dom` library. To navigate
+				programmatically, you can use the `useNavigate` hook (in React Router v6) or `useHistory` (in earlier
+				versions). Declarative navigation is achieved with `
+				<Link>` or `<NavLink>` components, which update the URL and manage browser history automatically.
+			</p>
+		</div>
+
+		<div>
+			<h2>4. What is the use of `Switch` and `Route` in React Router?</h2>
+			<p>
+				<b>ANS:</b>
+				- **`Switch`**: Ensures that only the first `Route` that matches the current URL is rendered. It
+				prevents multiple routes from being rendered at the same time.
+				- **`Route`**: Defines a path and the component to render when the URL matches that path. It accepts
+				props like `path` for the URL and `element` or `component` for rendering the desired content.
+			</p>
+		</div>
+
+		<div>
+			<h2>5. How can you use dynamic routes in React Router?</h2>
+			<p>
+				<b>ANS:</b> Dynamic routes are created by including parameters in the `path` prop of a `Route`
+				component, e.g., `
+				<Route path="/user/:id" />`. The `:id` represents a dynamic parameter that can be accessed using the
+				`useParams` hook within the component rendered by the route.
+			</p>
+		</div>
+
+		<div>
+			<h2>6. What is the purpose of `useParams` Hook?</h2>
+			<p>
+				<b>ANS:</b> The `useParams` hook retrieves the dynamic route parameters from the URL in React Router. It
+				returns an object containing key-value pairs of the parameters defined in the route path. For example,
+				in the route `/user/:id`, calling `useParams()` would return `{ id: "value" }`.
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<h1>Advanced Interview Questions of React</h1>
+
+		<div>
+			<h2>1. What are React portals, and when should you use them?</h2>
+			<p>
+				<b>ANS:</b> React portals allow you to render a child component into a DOM node that exists outside the
+				DOM hierarchy of its parent. You use portals for cases like modals, tooltips, or overlays, where the
+				child component needs to break out of its parent's constraints. Example usage:
+			<pre>
+			  ReactDOM.createPortal(child, document.getElementById('portal-root'));
+			</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>2. What is code-splitting, and how do you implement it in React?</h2>
+			<p>
+				<b>ANS:</b> Code-splitting is a technique where you break down the code into smaller bundles to load
+				only the necessary code on demand, improving performance. You can implement it in React using
+				`React.lazy` and `Suspense`. For example:
+			<pre>
+			  const LazyComponent = React.lazy(() => import('./LazyComponent'));
+			  &lt;Suspense fallback={<div>Loading...</div>}>
+				&lt;LazyComponent />
+			  &lt;/Suspense>
+			</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>3. Explain lazy loading and how you can implement it in React.</h2>
+			<p>
+				<b>ANS:</b> Lazy loading delays the loading of a resource (like a component) until it’s actually needed.
+				In React, lazy loading is done via `React.lazy` for components and `Suspense` for a loading fallback.
+				Example:
+			<pre>
+			  const LazyComponent = React.lazy(() => import('./LazyComponent'));
+			  &lt;Suspense fallback={<div>Loading...</div>}>
+				&lt;LazyComponent />
+			  &lt;/Suspense>
+			</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>4. What is Concurrent Mode in React, and what are its benefits?</h2>
+			<p>
+				<b>ANS:</b> Concurrent Mode is an experimental feature that helps React apps stay responsive and work
+				fluidly by rendering components in the background while keeping the app interactive. It allows React to
+				interrupt rendering to work on higher-priority updates, like user interactions. The benefits are
+				smoother user experiences, improved performance, and less jank.
+			</p>
+		</div>
+
+		<div>
+			<h2>5. How do you implement Error Boundaries in React?</h2>
+			<p>
+				<b>ANS:</b> Error Boundaries are React components that catch JavaScript errors anywhere in the component
+				tree, log those errors, and display a fallback UI. They are implemented using the `componentDidCatch`
+				lifecycle method or the `static getDerivedStateFromError` method. Example:
+			<pre>
+			  class ErrorBoundary extends React.Component {
+				constructor(props) {
+				  super(props);
+				  this.state = { hasError: false };
+				}
+	  
+				static getDerivedStateFromError(error) {
+				  return { hasError: true };
+				}
+	  
+				componentDidCatch(error, info) {
+				  logErrorToMyService(error, info);
+				}
+	  
+				render() {
+				  if (this.state.hasError) {
+					return &lt;h1&gt;Something went wrong.&lt;/h1&gt;
+				  }
+				  return this.props.children;
+				}
+			  }
+			</pre>
+			</p>
+		</div>
+		<div>
+			<h2>6. What are the differences between Client-Side Rendering (CSR) and Server-Side Rendering (SSR)?</h2>
+			<p>
+				<b>ANS:</b>
+				- **CSR (Client-Side Rendering):** In CSR, the browser downloads a minimal HTML file and relies on
+				JavaScript to fetch and render the page content. This happens on the client side, which can lead to
+				longer initial load times but can make subsequent page navigation faster.
+				- **SSR (Server-Side Rendering):** In SSR, the server pre-renders the full HTML for each page, sending
+				the rendered content to the client. This results in faster initial load times and better SEO since the
+				content is available in the HTML at the time of request.
+			</p>
+		</div>
+
+		<div>
+			<h2>7. What is Server-Side Rendering (SSR) in React, and how does it work?</h2>
+			<p>
+				<b>ANS:</b> SSR in React is a technique where React components are rendered on the server into static
+				HTML before sending them to the client. The server sends fully-rendered HTML to the browser, which
+				allows for faster initial page loads and better SEO. React on the client side then "hydrates" the HTML,
+				attaching event listeners and making the page interactive. Example setup:
+			<pre>
+				const express = require('express');
+				const ReactDOMServer = require('react-dom/server');
+				const app = express();
+		
+				app.get('*', (req, res) => {
+				  const content = ReactDOMServer.renderToString(<App />);
+				  res.send(`<html><body>${content}</body></html>`);
+				});
+			  </pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>8. How does Next.js improve SSR and static generation in React applications?</h2>
+			<p>
+				<b>ANS:</b> Next.js is a React framework that improves SSR by offering built-in support for server-side
+				rendering and static site generation. It allows pages to be pre-rendered on the server at build time
+				(Static Generation) or on each request (SSR). Next.js also provides automatic code splitting and
+				optimization, so only the necessary code is loaded. It makes server-side rendering easy by adding
+				features like automatic routing, dynamic imports, and API routes.
+			</p>
+		</div>
+
+		<div>
+			<h2>9. What are the benefits of using Next.js over a standard React app?</h2>
+			<p>
+				<b>ANS:</b> Some benefits of Next.js over a standard React app are:
+				- **Automatic SSR and Static Generation**: Next.js allows pages to be rendered on the server, improving
+				performance and SEO.
+				- **File-based Routing**: It automatically handles routing based on the file structure.
+				- **API Routes**: You can write backend logic directly in Next.js.
+				- **Built-in CSS and Sass Support**: Next.js comes with built-in support for CSS modules and Sass.
+				- **Image Optimization**: Built-in image optimization helps improve the page load speed.
+			</p>
+		</div>
+
+		<div>
+			<h2>10. What are Suspense and Concurrent Mode in React?</h2>
+			<p>
+				<b>ANS:</b>
+				- **Suspense** is a React component used for handling asynchronous operations like data fetching. It
+				lets you "suspend" rendering until the data is ready, showing a fallback UI in the meantime.
+				- **Concurrent Mode** is a feature that makes React apps more responsive by rendering components in the
+				background. It allows React to prioritize higher-priority updates, like user interactions, over
+				lower-priority updates, improving performance and reducing jank.
+			</p>
+		</div>
+
+		<div>
+			<h2>11. How do you handle asynchronous data with Suspense in React?</h2>
+			<p>
+				<b>ANS:</b> With Suspense, you can use React's `React.lazy` for code splitting and `Suspense` for data
+				fetching. When handling asynchronous data, you wrap your components with `Suspense` and provide a
+				fallback UI. You can use libraries like `React Query` or `Apollo Client` to fetch data, and React will
+				wait for the data before rendering the component.
+				Example:
+			<pre>
+				const dataFetch = fetchData();
+				const MyComponent = React.lazy(() => import('./MyComponent'));
+		
+				&lt;Suspense fallback={<div>Loading...</div>}>
+				  &lt;MyComponent data={dataFetch} />
+				&lt;/Suspense>
+			  </pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>12. What are custom hooks in React, and why would you use them?</h2>
+			<p>
+				<b>ANS:</b> Custom hooks are JavaScript functions that allow you to reuse stateful logic across
+				components. They are prefixed with "use" (e.g., `useFetch`, `useForm`) and can use other React hooks
+				inside them. You create them when you want to share logic that is not related to the UI or when multiple
+				components need to share the same functionality. Example:
+			<pre>
+				function useFetch(url) {
+				  const [data, setData] = useState(null);
+				  useEffect(() => {
+					fetch(url)
+					  .then((response) => response.json())
+					  .then(setData);
+				  }, [url]);
+				  return data;
+				}
+			  </pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>13. What are the best practices for structuring a large React project?</h2>
+			<p>
+				<b>ANS:</b> Some best practices for structuring large React projects include:
+				- **Use feature-based folder structure**: Organize components, actions, and reducers based on features
+				or domains (e.g., `src/components/auth`, `src/components/dashboard`).
+				- **Split UI and business logic**: Separate concerns by keeping UI components and logic in different
+				files or directories.
+				- **Use index files for cleaner imports**: Create `index.js` files in directories to simplify imports.
+				- **Keep components small and focused**: Write components that focus on one task or behavior, and don’t
+				mix concerns.
+			</p>
+		</div>
+
+		<div>
+			<h2>14. How does the Virtual DOM work in React?</h2>
+			<p>
+				<b>ANS:</b> The Virtual DOM is an in-memory representation of the actual DOM. React uses it to optimize
+				updates by comparing the previous virtual DOM with the new one (using a process called
+				"reconciliation"). It determines the minimal set of changes that need to be made to the actual DOM,
+				improving performance by avoiding unnecessary re-renders. When the state of a component changes, React
+				updates the Virtual DOM first, then calculates the diff, and updates only the changed parts of the
+				actual DOM.
+			</p>
+		</div>
+
+		<div>
+			<h2>15. How does React’s reconciliation algorithm work?</h2>
+			<p>
+				<b>ANS:</b> React’s reconciliation algorithm works by comparing the previous and new Virtual DOMs
+				(diffing) to figure out which parts of the DOM need to be updated. React uses the concept of "keys" to
+				optimize reordering lists of elements. When React detects that a component or element has changed, it
+				efficiently updates only the changed elements, avoiding unnecessary re-renders and minimizing DOM
+				manipulation.
+			</p>
+		</div>
+		<div>
+			<h2>16. Explain how `React.StrictMode` works and its purpose.</h2>
+			<p>
+				<b>ANS:</b>
+				`React.StrictMode` is a tool for highlighting potential problems in an application during development.
+				It doesn't render any UI itself; it only activates additional checks and warnings for its descendants.
+				It helps identify unsafe lifecycle methods, deprecated APIs, and other issues that may affect the
+				application in the future. It runs in development mode only, helping developers improve code quality.
+			</p>
+		</div>
+
+		<div>
+			<h2>17. How do you prevent unnecessary re-renders in React?</h2>
+			<p>
+				<b>ANS:</b>
+				To prevent unnecessary re-renders in React:
+				- **Use `React.memo`**: This higher-order component prevents re-renders when props haven't changed.
+				- **Use `useCallback`**: Memoizes functions so that they aren't recreated on every render.
+				- **Use `useMemo`**: Memoizes values to prevent expensive recalculations.
+				- **Avoid Inline Functions and Objects in JSX**: Creating functions or objects inside JSX can cause
+				unnecessary re-renders because they are treated as new references on each render.
+				- **Optimize State Management**: Update state in a way that minimizes component re-renders (e.g., using
+				a more granular state).
+			</p>
+		</div>
+
+		<div>
+			<h2>18. Explain how to debounce or throttle a function in React.</h2>
+			<p>
+				<b>ANS:</b>
+				- **Debouncing** ensures that a function is only called after a certain amount of time has passed
+				without it being invoked again. For example, when typing in a search box, it waits until the user has
+				stopped typing for a set amount of time before making an API request.
+				- **Throttling** ensures that a function is called at regular intervals, regardless of how often the
+				event is triggered. For example, when handling scroll events, it limits the number of times a function
+				is called, ensuring it runs only once every few milliseconds.
+				You can use libraries like `lodash.debounce` and `lodash.throttle` or implement your own using
+				`setTimeout` or `setInterval`.
+			</p>
+		</div>
+
+		<div>
+			<h2>19. What are prop types, and why are they used in React?</h2>
+			<p>
+				<b>ANS:</b>
+				Prop types are a way to enforce the type of props passed to a component in React. They help catch
+				potential bugs by ensuring that props passed into components are of the correct type and shape. You
+				define prop types using the `prop-types` library. Example:
+			<pre>
+				import PropTypes from 'prop-types';
+				const MyComponent = ({ name, age }) => {
+				  return <div>{name}, {age}</div>;
+				};
+				MyComponent.propTypes = {
+				  name: PropTypes.string.isRequired,
+				  age: PropTypes.number.isRequired,
+				};
+			  </pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>20. How do you manage side effects in a React app?</h2>
+			<p>
+				<b>ANS:</b>
+				Side effects in React are managed using the `useEffect` hook. `useEffect` allows you to run code after
+				the component has rendered, such as data fetching, subscriptions, or manually updating the DOM. You can
+				control when side effects run by passing dependency arrays to `useEffect`, ensuring they only execute
+				when specific values change. For example:
+			<pre>
+				useEffect(() => {
+				  fetchData();
+				}, []);  // Empty array ensures it runs once when the component mounts.
+			  </pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>21. How does the `useReducer` Hook work, and when would you use it?</h2>
+			<p>
+				<b>ANS:</b>
+				The `useReducer` hook is used for managing complex state logic in React components, especially when the
+				state depends on multiple values or when the next state is derived from the previous state. It works by
+				accepting a reducer function and an initial state and returns the current state and dispatch function.
+				You would use `useReducer` when your state logic becomes too complex for `useState`, or when you're
+				managing actions and state transitions (e.g., form handling, authentication).
+				Example:
+			<pre>
+				const [state, dispatch] = useReducer(reducer, initialState);
+			  </pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>22. Explain how to create and use custom hooks.</h2>
+			<p>
+				<b>ANS:</b>
+				Custom hooks are JavaScript functions that allow you to extract and reuse stateful logic. Custom hooks
+				start with the word `use` (e.g., `useFetch`, `useForm`). You can create them by combining React's
+				built-in hooks like `useState`, `useEffect`, etc., to share logic between components without repeating
+				code. To use a custom hook, simply call it inside a functional component just like any other hook.
+				Example:
+			<pre>
+				function useFetch(url) {
+				  const [data, setData] = useState(null);
+				  useEffect(() => {
+					fetch(url)
+					  .then((response) => response.json())
+					  .then(setData);
+				  }, [url]);
+				  return data;
+				}
+			  </pre>
+			</p>
+		</div>
+	</section>
+
+
+
+
+</body>
+
+</html>

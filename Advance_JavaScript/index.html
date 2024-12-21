@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../CSS_assignment/style.css">
+	<title>Advance Javascript</title>
+</head>
+
+<body>
+	<section>
+		<h1>ES6</h1>
+
+		<div>
+			<h2>1. What are arrow functions in ES6, and how are they different from regular functions?</h2>
+			<p>
+				<b>ANS:</b> Arrow functions are a shorthand way of writing functions in ES6. They do not have their own
+				<code>this</code>, so they inherit <code>this</code> from the surrounding scope. This differs from
+				regular functions, which have their own <code>this</code> based on how they are called.
+				- Example of an arrow function:
+			<pre>
+						const greet = () => console.log('Hello!');
+					</pre>
+			- Example of a regular function:
+			<pre>
+						function greet() { console.log('Hello!'); }
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>2. What is destructuring assignment in ES6, and how does it work with arrays and objects?</h2>
+			<p>
+				<b>ANS:</b> Destructuring allows you to unpack values from arrays or properties from objects into
+				distinct variables.
+				- Example with arrays:
+			<pre>
+						const arr = [1, 2, 3];
+						const [a, b, c] = arr;
+						console.log(a, b, c); // Output: 1 2 3
+					</pre>
+			- Example with objects:
+			<pre>
+						const person = { name: 'John', age: 30 };
+						const { name, age } = person;
+						console.log(name, age); // Output: John 30
+					</pre>
+			- **Project**: Write a function that takes an object with properties and logs each property individually:
+			<pre>
+						const person = { name: 'John', age: 30, city: 'New York' };
+						function logPerson({ name, age, city }) {
+							console.log(name, age, city);
+						}
+						logPerson(person);
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>3. Explain `let`, `const`, and `var` keywords. When should you use each?</h2>
+			<p>
+				<b>ANS:</b>
+				- <code>var</code> is function-scoped and can be redeclared. It has hoisting issues.
+				- <code>let</code> is block-scoped and can be reassigned but not redeclared within the same block.
+				- <code>const</code> is also block-scoped and cannot be reassigned or redeclared.
+				- Use <code>let</code> for variables that will change, <code>const</code> for constants, and
+				<code>var</code> should be avoided due to potential scoping issues.
+			</p>
+		</div>
+
+		<div>
+			<h2>4. What is the `spread` operator, and how can it be used with arrays and objects?</h2>
+			<p>
+				<b>ANS:</b> The spread operator (<code>...</code>) allows you to unpack elements from an array or object
+				and spread them into another array or object.
+				- Example with arrays:
+			<pre>
+						const arr1 = [1, 2, 3];
+						const arr2 = [...arr1, 4, 5];
+						console.log(arr2); // Output: [1, 2, 3, 4, 5]
+					</pre>
+			- Example with objects:
+			<pre>
+						const obj1 = { name: 'John' };
+						const obj2 = { ...obj1, age: 30 };
+						console.log(obj2); // Output: { name: 'John', age: 30 }
+					</pre>
+			- **Project**: Merge two arrays using the spread operator:
+			<pre>
+						const arr1 = [1, 2, 3];
+						const arr2 = [4, 5, 6];
+						const mergedArr = [...arr1, ...arr2];
+						console.log(mergedArr); // Output: [1, 2, 3, 4, 5, 6]
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>5. How does template literals work in ES6, and how does it make string interpolation easier?</h2>
+			<p>
+				<b>ANS:</b> Template literals use backticks (<code>`</code>) and allow embedded expressions using `${}`.
+				This makes string interpolation and multi-line strings easier.
+				- Example:
+			<pre>
+						const name = 'John';
+						const greeting = `Hello, ${name}!`;
+						console.log(greeting); // Output: Hello, John!
+					</pre>
+			- Multi-line strings:
+			<pre>
+						const message = `This is line 1
+						and this is line 2.`;
+						console.log(message);
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>6. What are `default parameters` in ES6, and how do they improve function flexibility?</h2>
+			<p>
+				<b>ANS:</b> Default parameters allow you to set a default value for a function argument if no value is
+				provided.
+				- Example:
+			<pre>
+						function greet(name = 'Guest') {
+							console.log(`Hello, ${name}!`);
+						}
+						greet(); // Output: Hello, Guest!
+						greet('John'); // Output: Hello, John!
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>7. Explain what `Map` and `Set` are in ES6 and how they differ from objects and arrays.</h2>
+			<p>
+				<b>ANS:</b>
+				- **Map**: A collection of key-value pairs where keys can be any type (not just strings or symbols). It
+				maintains the order of insertion.
+				- **Set**: A collection of unique values. Duplicates are not allowed, and it also maintains the
+				insertion order.
+				- **Difference**:
+				- Objects have string/symbol keys, and Arrays are index-based.
+				- Maps can have any type of key, and Sets only store unique values.
+				- **Project**: Create a simple dictionary with `Map` to store key-value pairs:
+			<pre>
+						const dictionary = new Map();
+						dictionary.set('apple', 'A fruit');
+						dictionary.set('dog', 'A pet animal');
+						console.log(dictionary.get('apple')); // Output: A fruit
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>8. What is the purpose of the `for...of` loop, and how is it different from `for...in`?</h2>
+			<p>
+				<b>ANS:</b>
+				- **`for...of`** is used to iterate over iterable objects (like arrays, strings, etc.) and returns the
+				value of each item.
+				- **`for...in`** is used to iterate over the keys of an object (or array indices) and returns the key
+				name.
+				- Example:
+			<pre>
+						const arr = [1, 2, 3];
+						for (const item of arr) {
+							console.log(item); // Output: 1 2 3
+						}
+	
+						const obj = { name: 'John', age: 30 };
+						for (const key in obj) {
+							console.log(key); // Output: name, age
+						}
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>9. Explain the concept of `Promise` in JavaScript. How do you use `.then()` and `.catch()`?</h2>
+			<p>
+				<b>ANS:</b> A **Promise** represents a value that may be available now, or in the future, or never. It
+				allows you to handle asynchronous operations.
+				- Example:
+			<pre>
+						const promise = new Promise((resolve, reject) => {
+							setTimeout(() => resolve('Success!'), 2000);
+						});
+						promise.then(result => console.log(result)) // Output: Success!
+							   .catch(error => console.error(error));
+					</pre>
+			- **`.then()`** is used to handle a successful operation, and **`.catch()`** handles errors.
+			- **Project**: Create a promise that resolves after 2 seconds and logs a message:
+			<pre>
+						const myPromise = new Promise((resolve) => {
+							setTimeout(() => resolve('This is a resolved promise!'), 2000);
+						});
+						myPromise.then(message => console.log(message)); // Output: This is a resolved promise!
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>10. What is async/await, and how does it work with Promises?</h2>
+			<p>
+				<b>ANS:</b> **async/await** is a cleaner syntax for working with promises.
+				- **`async`** makes a function return a promise, and **`await`** makes JavaScript wait for the promise
+				to resolve before continuing.
+				- Example:
+			<pre>
+						async function fetchData() {
+							const data = await myPromise;
+							console.log(data); // Output: This is a resolved promise!
+						}
+						fetchData();
+					</pre>
+			</p>
+		</div>
+
+	</section>
+
+	<section>
+		<h1>DOM</h1>
+
+		<div>
+			<h2>1. What is the DOM, and how does JavaScript interact with it?</h2>
+			<p>
+				<b>ANS:</b> The DOM (Document Object Model) represents the structure of a webpage as a tree of objects.
+				JavaScript interacts with the DOM to access, manipulate, and update the content and structure of the
+				page dynamically. This allows for responsive and interactive web pages.
+			</p>
+		</div>
+
+		<div>
+			<h2>2. Explain how to select elements in the DOM using methods like `getElementById`, `querySelector`, and
+				`querySelectorAll`.</h2>
+			<p>
+				<b>ANS:</b>
+				- <code>getElementById(id)</code>: Selects a single element by its unique ID.
+				- <code>querySelector(selector)</code>: Selects the first element matching the CSS selector.
+				- <code>querySelectorAll(selector)</code>: Selects all elements matching the CSS selector and returns a
+				NodeList.
+				- **Project**: Create a webpage with a button that changes the color of a `div` when clicked:
+			<pre>
+						<button id="changeColorBtn">Change Color</button>
+						<div id="myDiv" style="width:100px;height:100px;background-color:blue;"></div>
+						<script>
+							const btn = document.getElementById('changeColorBtn');
+							const div = document.getElementById('myDiv');
+							btn.addEventListener('click', () => {
+								div.style.backgroundColor = 'red';
+							});
+						</script>
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>3. How do event listeners work in JavaScript? Explain `addEventListener`.</h2>
+			<p>
+				<b>ANS:</b> Event listeners allow you to attach a function that will be triggered when a specific event
+				occurs on an element. <code>addEventListener</code> is used to register the event and specify the
+				callback function that should run when the event is triggered.
+				- Example:
+			<pre>
+						const button = document.querySelector('button');
+						button.addEventListener('click', function() {
+							alert('Button clicked!');
+						});
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>4. What is event delegation, and why is it useful?</h2>
+			<p>
+				<b>ANS:</b> Event delegation is a technique where a single event listener is added to a parent element,
+				and it listens for events on child elements using event bubbling. This reduces the need to add event
+				listeners to each individual child element.
+				- **Project**: Create a list where clicking on each list item logs its content using event delegation:
+			<pre>
+						<ul id="itemList">
+							<li>Item 1</li>
+							<li>Item 2</li>
+							<li>Item 3</li>
+						</ul>
+						<script>
+							const list = document.getElementById('itemList');
+							list.addEventListener('click', (e) => {
+								if (e.target.tagName === 'LI') {
+									console.log(e.target.textContent);
+								}
+							});
+						</script>
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>5. What is the difference between `innerHTML`, `textContent`, and `innerText`?</h2>
+			<p>
+				<b>ANS:</b>
+				- <code>innerHTML</code> retrieves or sets the HTML content inside an element, including any tags.
+				- <code>textContent</code> retrieves or sets the plain text content inside an element, excluding any
+				HTML tags.
+				- <code>innerText</code> is similar to <code>textContent</code> but respects CSS styling, such as
+				visibility and display properties.
+			</p>
+		</div>
+
+		<div>
+			<h2>6. Explain how you can manipulate CSS styles of an element using JavaScript.</h2>
+			<p>
+				<b>ANS:</b> You can manipulate the CSS styles of an element using the <code>style</code> property in
+				JavaScript. Each CSS property is represented as a camelCased property in JavaScript.
+				- Example:
+			<pre>
+						const element = document.getElementById('myElement');
+						element.style.color = 'red';
+						element.style.fontSize = '20px';
+					</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>7. How do you traverse the DOM? Explain `parentNode`, `firstChild`, `lastChild`, etc.</h2>
+			<p>
+				<b>ANS:</b> DOM traversal refers to moving through the DOM tree using properties like:
+				- <code>parentNode</code>: Access the parent element of the current element.
+				- <code>firstChild</code>: Access the first child of the current element.
+				- <code>lastChild</code>: Access the last child of the current element.
+				- <code>nextSibling</code>: Access the next sibling element.
+				- <code>previousSibling</code>: Access the previous sibling element.
+			</p>
+		</div>
+
+		<div>
+			<h2>8. What is the purpose of `preventDefault()` and `stopPropagation()` in event handling?</h2>
+			<p>
+				<b>ANS:</b>
+				- <code>preventDefault()</code>: Prevents the default behavior of an event, such as preventing a form
+				submission or a link from being followed.
+				- <code>stopPropagation()</code>: Stops the event from propagating (bubbling) up the DOM, preventing
+				other event listeners on parent elements from being triggered.
+				- **Project**: Create a form that prevents submission and logs a message instead:
+			<pre>
+						<form id="myForm">
+							<input type="text" placeholder="Enter text">
+							<button type="submit">Submit</button>
+						</form>
+						<script>
+							const form = document.getElementById('myForm');
+							form.addEventListener('submit', (e) => {
+								e.preventDefault();
+								console.log('Form submission prevented!');
+							});
+						</script>
+					</pre>
+			</p>
+		</div>
+
+	</section>
+
+	<section>
+		<h1>BOM</h1>
+
+		<div>
+			<h2>1. What is the Browser Object Model (BOM) in JavaScript?</h2>
+			<p>
+				<b>ANS:</b> The BOM (Browser Object Model) allows JavaScript to interact with the browser window,
+				enabling control over browser functions like opening, closing, resizing windows, and working with
+				browser-specific features (like cookies, local storage, etc.). It provides access to objects like
+				`window`, `navigator`, `screen`, and `location`.
+			</p>
+		</div>
+
+		<div>
+			<h2>2. How does `window` differ from `document`?</h2>
+			<p>
+				<b>ANS:</b> The `window` object represents the entire browser window, including all global JavaScript
+				functions and properties (like `alert()`, `setTimeout()`). The `document` object represents the HTML
+				document loaded into the browser window and is used for manipulating the DOM (Document Object Model).
+			</p>
+		</div>
+
+		<div>
+			<h2>3. Explain how `localStorage`, `sessionStorage`, and `cookies` work and their differences.</h2>
+			<p>
+				<b>ANS:</b>
+				- <code>localStorage</code>: Stores data with no expiration time. Data is persistent across browser
+				sessions.
+				- <code>sessionStorage</code>: Stores data for the duration of the page session. Data is cleared once
+				the tab or browser is closed.
+				- <code>cookies</code>: Stores small amounts of data that are sent to the server with each HTTP request.
+				They can have expiration times and can be accessed across sessions.
+			</p>
+			<p>
+				- **Project**: Store and retrieve user preferences (like theme) using `localStorage`:
+			<pre>
+			  <button id="toggleTheme">Toggle Theme</button>
+			  <script>
+				const button = document.getElementById('toggleTheme');
+				const body = document.body;
+				button.addEventListener('click', () => {
+					if (localStorage.getItem('theme') === 'dark') {
+						localStorage.setItem('theme', 'light');
+						body.classList.remove('dark');
+					} else {
+						localStorage.setItem('theme', 'dark');
+						body.classList.add('dark');
+					}
+				});
+				if (localStorage.getItem('theme') === 'dark') {
+					body.classList.add('dark');
+				}
+			</script>
+			</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>4. What is the purpose of the `navigator` object, and what properties does it have?</h2>
+			<p>
+				<b>ANS:</b> The `navigator` object provides information about the browser, such as its name, version,
+				language, and whether the user is online. Key properties include:
+				- <code>navigator.userAgent</code>: Returns the user-agent string.
+				- <code>navigator.language</code>: Returns the browser’s language.
+				- <code>navigator.onLine</code>: Returns a boolean indicating if the browser is online.
+			</p>
+		</div>
+
+		<div>
+			<h2>5. How do `window.open` and `window.close` methods work in JavaScript?</h2>
+			<p>
+				<b>ANS:</b>
+				- <code>window.open(url, name, specs)</code>: Opens a new browser window with the specified URL, name,
+				and window features.
+				- <code>window.close()</code>: Closes the current browser window (only works if the window was opened
+				using `window.open`).
+			</p>
+		</div>
+
+		<div>
+			<h2>6. Explain how to get the viewport width and height of a browser window using JavaScript.</h2>
+			<p>
+				<b>ANS:</b> You can use the <code>window.innerWidth</code> and <code>window.innerHeight</code>
+				properties to get the viewport's width and height.
+			</p>
+			<p>
+				- **Project**: Create a function that logs the window’s size whenever it’s resized:
+			<pre>
+			  window.addEventListener('resize', () => {
+				console.log('Width:', window.innerWidth, 'Height:', window.innerHeight);
+			  });
+			</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>7. What is the purpose of the `setTimeout` and `setInterval` functions?</h2>
+			<p>
+				<b>ANS:</b>
+				- <code>setTimeout(function, delay)</code>: Executes a function after a specified delay (in
+				milliseconds).
+				- <code>setInterval(function, delay)</code>: Repeatedly executes a function at a specified interval (in
+				milliseconds).
+			</p>
+			<p>
+				- **Project**: Create a clock that updates every second using `setInterval`:
+			<pre>
+			  const clock = document.getElementById('clock');
+			  setInterval(() => {
+				clock.textContent = new Date().toLocaleTimeString();
+			  }, 1000);
+			</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>8. How can you detect if a user is online or offline using the BOM?</h2>
+			<p>
+				<b>ANS:</b> You can use the <code>navigator.onLine</code> property to check if the user is online or
+				offline. Additionally, you can listen for the <code>online</code> and <code>offline</code> events to
+				detect changes in the network status.
+			</p>
+			<pre>
+			window.addEventListener('online', () => {
+			  console.log('User is online');
+			});
+			window.addEventListener('offline', () => {
+			  console.log('User is offline');
+			});
+		  </pre>
+		</div>
+	</section>
+
+	<section>
+		<h1>Web API & JSON</h1>
+
+		<div>
+			<h2>1. What is the Fetch API, and how does it work with Promises?</h2>
+			<p>
+				<b>ANS:</b> The Fetch API is a modern JavaScript API for making HTTP requests. It returns a Promise,
+				which makes it easier to handle asynchronous requests compared to the older `XMLHttpRequest`. The
+				`fetch()` function allows you to send requests to the server and get a response. It also allows chaining
+				`.then()` for handling responses or errors.
+			</p>
+			<p>
+				- **Project**: Fetch data from a public API (e.g., JSONPlaceholder) and display it on the page:
+			<pre>
+			  fetch('https://jsonplaceholder.typicode.com/posts')
+				.then(response => response.json())
+				.then(data => {
+				  data.forEach(post => {
+					const postDiv = document.createElement('div');
+					postDiv.textContent = post.title;
+					document.body.appendChild(postDiv);
+				  });
+				})
+				.catch(error => console.error('Error fetching data:', error));
+			</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>2. How does `XMLHttpRequest` differ from the Fetch API?</h2>
+			<p>
+				<b>ANS:</b> `XMLHttpRequest` is an older API used to make HTTP requests in JavaScript, which requires
+				more code to handle asynchronous responses. The Fetch API is simpler, returns Promises, and is more
+				modern, making it easier to work with asynchronous code and handle errors.
+			</p>
+		</div>
+
+		<div>
+			<h2>3. Explain what JSON is and how it’s used in JavaScript.</h2>
+			<p>
+				<b>ANS:</b> JSON (JavaScript Object Notation) is a lightweight data format used for storing and
+				exchanging data. It’s easy for humans to read and write, and easy for machines to parse and generate. In
+				JavaScript, it’s used for sending data to and receiving data from APIs, and can be manipulated using
+				`JSON.parse()` to convert a string to an object, and `JSON.stringify()` to convert an object to a
+				string.
+			</p>
+		</div>
+
+		<div>
+			<h2>4. How do you parse JSON data in JavaScript, and how do you stringify JavaScript objects?</h2>
+			<p>
+				<b>ANS:</b>
+				- To parse JSON data: Use `JSON.parse()` to convert a JSON string into a JavaScript object.
+				- To stringify JavaScript objects: Use `JSON.stringify()` to convert a JavaScript object into a JSON
+				string.
+			</p>
+			<p>
+				- **Project**: Create a function that converts an object to JSON and back to an object:
+			<pre>
+			  const user = { name: 'John', age: 30 };
+			  const jsonString = JSON.stringify(user); // Convert object to JSON
+			  console.log(jsonString); // '{"name":"John","age":30}'
+			  
+			  const parsedObject = JSON.parse(jsonString); // Convert JSON back to object
+			  console.log(parsedObject); // { name: 'John', age: 30 }
+			</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>5. What is CORS, and why do we need it when making API requests?</h2>
+			<p>
+				<b>ANS:</b> CORS (Cross-Origin Resource Sharing) is a security feature implemented by browsers to
+				control how resources on a web page can be requested from a different domain. Without CORS, a web page
+				can only make requests to the same domain it was loaded from. CORS headers allow requests to be made to
+				a different domain, with proper permission from the server.
+			</p>
+		</div>
+
+		<div>
+			<h2>6. Explain how the `FormData` API works and when you’d use it.</h2>
+			<p>
+				<b>ANS:</b> The `FormData` API allows you to construct a set of key-value pairs representing form fields
+				and their values, and send this data using XMLHttpRequest or Fetch. It’s commonly used to submit form
+				data asynchronously without reloading the page (e.g., in AJAX form submissions).
+			</p>
+		</div>
+
+		<div>
+			<h2>7. What is the purpose of the `History` API, and how do `pushState` and `replaceState` work?</h2>
+			<p>
+				<b>ANS:</b> The `History` API allows you to manipulate the browser’s history and URL without reloading
+				the page.
+				- `pushState()` adds a new state to the history stack.
+				- `replaceState()` modifies the current history state without adding a new entry.
+			</p>
+			<p>
+				- **Project**: Create a simple single-page navigation system with `pushState`:
+			<pre>
+			  document.getElementById('home').addEventListener('click', () => {
+				history.pushState({ page: 'home' }, 'Home', '/home');
+				document.getElementById('content').textContent = 'This is the Home page';
+			  });
+			  
+			  document.getElementById('about').addEventListener('click', () => {
+				history.pushState({ page: 'about' }, 'About', '/about');
+				document.getElementById('content').textContent = 'This is the About page';
+			  });
+			</pre>
+			</p>
+		</div>
+
+		<div>
+			<h2>8. How can you handle errors in API requests with `try/catch` blocks and the `.catch()` method?</h2>
+			<p>
+				<b>ANS:</b> You can handle errors in API requests by using a `try/catch` block when using `async/await`
+				or by chaining `.catch()` when using Promises. This allows you to handle exceptions and display error
+				messages to the user.
+			</p>
+			<pre>
+			fetch('https://jsonplaceholder.typicode.com/posts')
+			  .then(response => response.json())
+			  .catch(error => console.error('Error fetching data:', error));
+		  </pre>
+		</div>
+
+		<div>
+			<h2>9. What are WebSockets, and how do they differ from HTTP requests?</h2>
+			<p>
+				<b>ANS:</b> WebSockets provide a full-duplex communication channel between the client and server over a
+				single, long-lived connection. Unlike HTTP, which is request-response based, WebSockets allow for
+				real-time, bidirectional communication, making it ideal for applications like chat apps or live data
+				feeds.
+			</p>
+		</div>
+
+		<div>
+			<h2>10. Explain the basics of the Service Worker API and its use in creating progressive web apps (PWAs).
+			</h2>
+			<p>
+				<b>ANS:</b> Service workers are JavaScript scripts that run in the background, separate from the web
+				page. They enable features like offline support, background sync, and push notifications. They are a
+				core technology in Progressive Web Apps (PWAs), allowing web apps to work offline or in low-connectivity
+				environments.
+			</p>
+		</div>
+	</section>
+
+</body>
+
+</html>

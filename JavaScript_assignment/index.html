@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript</title>
+	<link rel="stylesheet" href="../CSS_assignment/style.css">
+</head>
+<body>
+	<section>
+		<h1>JavaScript Fundamentals</h1>
+	
+		<div>
+			<h2>1. What are the different data types in JavaScript?</h2>
+			<p>
+				<b>ANS:</b> In JavaScript, the main data types are:
+				<ul>
+					<li><b>Primitive Types:</b>
+						<ul>
+							<li><code>String</code>: Text, e.g., 'Hello'</li>
+							<li><code>Number</code>: Numerical values, e.g., 10, 3.14</li>
+							<li><code>BigInt</code>: Large integers, e.g., 123n</li>
+							<li><code>Boolean</code>: True or false</li>
+							<li><code>Undefined</code>: A variable that has been declared but not assigned a value</li>
+							<li><code>Null</code>: Represents the intentional absence of any value</li>
+							<li><code>Symbol</code>: A unique identifier</li>
+						</ul>
+					</li>
+					<li><b>Complex Types:</b>
+						<ul>
+							<li><code>Object</code>: A collection of properties, e.g., { name: 'John', age: 30 }</li>
+						</ul>
+					</li>
+				</ul>
+			</p>
+		</div>
+	
+		<div>
+			<h2>2. What is the difference between `var`, `let`, and `const`?</h2>
+			<p>
+				<b>ANS:</b> 
+				- <code>var</code>: Declares a variable with function-scoped or globally-scoped, and it is hoisted with undefined value.
+				- <code>let</code>: Declares a variable with block scope, allowing reassignment.
+				- <code>const</code>: Declares a constant with block scope that cannot be reassigned.
+			</p>
+		</div>
+	
+		<div>
+			<h2>3. Explain JavaScript's `==` vs. `===` operators.</h2>
+			<p>
+				<b>ANS:</b> 
+				- <code>==</code>: Compares values for equality, performing type coercion if necessary (e.g., <code>5 == '5'</code> returns <code>true</code>).
+				- <code>===</code>: Compares both values and types for strict equality without type coercion (e.g., <code>5 === '5'</code> returns <code>false</code>).
+			</p>
+		</div>
+	
+		<div>
+			<h2>4. What is type coercion in JavaScript? Give an example.</h2>
+			<p>
+				<b>ANS:</b> Type coercion is the automatic or implicit conversion of one data type to another. For example:
+				<pre>
+					let result = 5 + '5'; // results in '55' (string)
+				</pre>
+				In this case, JavaScript coerces the number 5 to a string and concatenates it with another string.
+			</p>
+		</div>
+	
+		<div>
+			<h2>5. Explain the concept of scope in JavaScript.</h2>
+			<p>
+				<b>ANS:</b> Scope refers to the context in which variables and functions are accessible. There are two main types of scope:
+				<ul>
+					<li><b>Global Scope:</b> Variables declared outside of functions are globally accessible.</li>
+					<li><b>Local Scope:</b> Variables declared inside a function or block (using <code>let</code> or <code>const</code>) are only accessible within that function or block.</li>
+				</ul>
+			</p>
+		</div>
+	
+		<div>
+			<h2>6. What is hoisting in JavaScript?</h2>
+			<p>
+				<b>ANS:</b> Hoisting is the behavior in JavaScript where variable and function declarations are moved to the top of their containing scope during the compilation phase. For example:
+				<pre>
+					console.log(x); // undefined (due to hoisting)
+					var x = 5;
+				</pre>
+				However, only declarations are hoisted, not the initializations.
+			</p>
+		</div>
+	
+		<div>
+			<h2>7. What are template literals, and how are they used?</h2>
+			<p>
+				<b>ANS:</b> Template literals are a feature in JavaScript that allows embedded expressions and multi-line strings. They are defined using backticks <code>`</code> instead of quotes. Example:
+				<pre>
+					let name = 'John';
+					let greeting = `Hello, ${name}!`; // Using interpolation to embed variables
+					console.log(greeting); // "Hello, John!"
+				</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>8. Explain what a higher-order function is in JavaScript.</h2>
+			<p>
+				<b>ANS:</b> A higher-order function is a function that can accept other functions as arguments or return a function as a result. Example:
+				<pre>
+					function add(a, b) {
+						return a + b;
+					}
+					function operate(fn, x, y) {
+						return fn(x, y);
+					}
+					console.log(operate(add, 2, 3)); // Output: 5
+				</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>9. What are arrow functions, and how are they different from regular functions?</h2>
+			<p>
+				<b>ANS:</b> Arrow functions provide a shorter syntax for writing functions and have lexical scoping for <code>this</code>, meaning they don’t bind their own <code>this</code> value. Example:
+				<pre>
+					let add = (a, b) => a + b;
+				</pre>
+				This is shorter than the regular function declaration:
+				<pre>
+					function add(a, b) {
+						return a + b;
+					}
+				</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>10. What is an Immediately Invoked Function Expression (IIFE)?</h2>
+			<p>
+				<b>ANS:</b> An Immediately Invoked Function Expression (IIFE) is a function that is defined and executed immediately after its creation. It is commonly used to create a private scope to avoid polluting the global scope. Example:
+				<pre>
+					(function() {
+						console.log('I am an IIFE!');
+					})();
+				</pre>
+			</p>
+		</div>
+	
+	</section>
+
+	<section>
+		<h1>Functions and Objects</h1>
+	
+		<div>
+			<h2>1. Explain the concept of closures in JavaScript.</h2>
+			<p>
+				<b>ANS:</b> A closure in JavaScript is a function that "remembers" its lexical scope, even when the function is executed outside that scope. This allows the function to access variables from its outer function after the outer function has finished execution. Example:
+				<pre>
+					function outer() {
+						let count = 0;
+						return function inner() {
+							count++;
+							console.log(count);
+						};
+					}
+					const counter = outer();
+					counter(); // Output: 1
+					counter(); // Output: 2
+				</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>2. What is the `this` keyword, and how does it behave in different contexts?</h2>
+			<p>
+				<b>ANS:</b> The <code>this</code> keyword refers to the context in which a function is called. It can behave differently depending on how the function is invoked:
+				<ul>
+					<li><b>Global context:</b> In a global function, <code>this</code> refers to the global object (in browsers, it’s <code>window</code>).</li>
+					<li><b>Object method:</b> Inside an object method, <code>this</code> refers to the object itself.</li>
+					<li><b>Constructor function:</b> In a constructor function, <code>this</code> refers to the newly created instance.</li>
+					<li><b>Arrow functions:</b> Arrow functions do not have their own <code>this</code>, so they inherit <code>this</code> from their surrounding lexical context.</li>
+				</ul>
+			</p>
+		</div>
+	
+		<div>
+			<h2>3. How do you create an object in JavaScript?</h2>
+			<p>
+				<b>ANS:</b> There are several ways to create objects in JavaScript:
+				<ul>
+					<li><b>Object literal:</b> 
+						<pre>
+							let person = { name: 'John', age: 30 };
+						</pre>
+					</li>
+					<li><b>Using the <code>new Object()</code> syntax:</b>
+						<pre>
+							let person = new Object();
+							person.name = 'John';
+							person.age = 30;
+						</pre>
+					</li>
+					<li><b>Using a constructor function:</b>
+						<pre>
+							function Person(name, age) {
+								this.name = name;
+								this.age = age;
+							}
+							let person = new Person('John', 30);
+						</pre>
+					</li>
+				</ul>
+			</p>
+		</div>
+	
+		<div>
+			<h2>4. What is the difference between `null` and `undefined`?</h2>
+			<p>
+				<b>ANS:</b> 
+				- <code>null</code>: Represents the intentional absence of any object value. It is an assignment value, meaning it can be assigned to a variable.
+				- <code>undefined</code>: Indicates that a variable has been declared but has not been assigned any value. It is the default value of uninitialized variables.
+			</p>
+		</div>
+	
+		<div>
+			<h2>5. How do you copy an object in JavaScript? Explain shallow vs. deep copy.</h2>
+			<p>
+				<b>ANS:</b> To copy an object in JavaScript, there are two main approaches:
+				<ul>
+					<li><b>Shallow copy:</b> Copies the top-level properties. If the object has nested objects, the references to those objects are copied, not the objects themselves.
+						<pre>
+							let obj1 = { name: 'John', address: { city: 'New York' } };
+							let obj2 = { ...obj1 }; // Shallow copy
+						</pre>
+					</li>
+					<li><b>Deep copy:</b> Recursively copies all properties, including nested objects, creating a completely independent copy.
+						<pre>
+							let obj1 = { name: 'John', address: { city: 'New York' } };
+							let obj2 = JSON.parse(JSON.stringify(obj1)); // Deep copy
+						</pre>
+					</li>
+				</ul>
+			</p>
+		</div>
+	
+		<div>
+			<h2>6. Explain how `call`, `apply`, and `bind` work in JavaScript.</h2>
+			<p>
+				<b>ANS:</b> 
+				- <code>call</code>: Invokes a function immediately, with a specified <code>this</code> value and arguments passed individually.
+					<pre>
+						function greet() {
+							console.log(`Hello, ${this.name}`);
+						}
+						let person = { name: 'John' };
+						greet.call(person); // Output: Hello, John
+					</pre>
+				- <code>apply</code>: Similar to <code>call</code>, but arguments are passed as an array.
+					<pre>
+						greet.apply(person, []); // Output: Hello, John
+					</pre>
+				- <code>bind</code>: Returns a new function that, when called, has its <code>this</code> value set to the provided value. It doesn’t execute immediately.
+					<pre>
+						let boundGreet = greet.bind(person);
+						boundGreet(); // Output: Hello, John
+					</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>7. What is the prototype chain, and how does inheritance work in JavaScript?</h2>
+			<p>
+				<b>ANS:</b> The prototype chain is a mechanism by which JavaScript objects inherit properties and methods from other objects. Every JavaScript object has an internal property called <code>[[Prototype]]</code>, which points to another object. This forms a chain of objects, which allows inheritance.
+				<ul>
+					<li>If an object does not have a certain property, JavaScript looks for that property in the object's prototype.</li>
+					<li>If it doesn't find it, it looks in the prototype of the prototype, and so on, until it reaches the end of the chain (where <code>null</code> is found).</li>
+				</ul>
+				Example of inheritance:
+				<pre>
+					function Animal(name) {
+						this.name = name;
+					}
+					Animal.prototype.speak = function() {
+						console.log(`${this.name} makes a sound.`);
+					};
+					let dog = new Animal('Dog');
+					dog.speak(); // Output: Dog makes a sound.
+				</pre>
+			</p>
+		</div>
+	
+	</section>
+
+	<section>
+		<h1>Arrays and Strings</h1>
+	
+		<div>
+			<h2>1. What are some common array methods in JavaScript?</h2>
+			<p>
+				<b>ANS:</b> Some common array methods in JavaScript include:
+				<ul>
+					<li><b>push()</b>: Adds one or more elements to the end of an array.</li>
+					<li><b>pop()</b>: Removes the last element of an array.</li>
+					<li><b>shift()</b>: Removes the first element of an array.</li>
+					<li><b>unshift()</b>: Adds one or more elements to the beginning of an array.</li>
+					<li><b>concat()</b>: Merges two or more arrays.</li>
+					<li><b>slice()</b>: Returns a shallow copy of a portion of an array.</li>
+					<li><b>splice()</b>: Changes the contents of an array by removing or replacing elements.</li>
+					<li><b>sort()</b>: Sorts the elements of an array in place.</li>
+					<li><b>reverse()</b>: Reverses the order of elements in an array.</li>
+				</ul>
+			</p>
+		</div>
+	
+		<div>
+			<h2>2. How does `map()` differ from `forEach()` in arrays?</h2>
+			<p>
+				<b>ANS:</b> 
+				- <code>map()</code>: Creates a new array by applying a function to each element of the original array. It returns the new array and does not modify the original array.
+					<pre>
+						let numbers = [1, 2, 3];
+						let doubled = numbers.map(num => num * 2); // Output: [2, 4, 6]
+					</pre>
+				- <code>forEach()</code>: Executes a function on each element of the array but does not return a new array. It is used for side effects like logging or modifying elements in place.
+					<pre>
+						let numbers = [1, 2, 3];
+						numbers.forEach(num => console.log(num)); // Output: 1 2 3
+					</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>3. Explain the `filter()` method. How does it work?</h2>
+			<p>
+				<b>ANS:</b> The <code>filter()</code> method creates a new array with all elements that pass the test implemented by the provided function. It does not modify the original array.
+				<pre>
+					let numbers = [1, 2, 3, 4, 5];
+					let evenNumbers = numbers.filter(num => num % 2 === 0); // Output: [2, 4]
+				</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>4. What does the `reduce()` method do, and how is it used?</h2>
+			<p>
+				<b>ANS:</b> The <code>reduce()</code> method applies a function to each element of an array (from left to right) and reduces it to a single value. It takes a callback function and an initial value as arguments.
+				<pre>
+					let numbers = [1, 2, 3, 4];
+					let sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0); // Output: 10
+				</pre>
+				In the example, the <code>reduce()</code> method sums up the elements of the array.
+			</p>
+		</div>
+	
+		<div>
+			<h2>5. How do you find the length of a string and reverse it?</h2>
+			<p>
+				<b>ANS:</b>
+				- To find the length of a string, use the <code>length</code> property:
+					<pre>
+						let str = 'Hello';
+						let length = str.length; // Output: 5
+					</pre>
+				- To reverse a string, you can convert it into an array, reverse it, and join it back:
+					<pre>
+						let str = 'Hello';
+						let reversed = str.split('').reverse().join(''); // Output: 'olleH'
+					</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>6. What are template literals, and how can they be used for string manipulation?</h2>
+			<p>
+				<b>ANS:</b> Template literals, introduced in ES6, are string literals that allow embedded expressions, multi-line strings, and interpolation. They are enclosed by backticks <code>``</code> instead of regular single or double quotes.
+				- String interpolation:
+					<pre>
+						let name = 'John';
+						let greeting = `Hello, ${name}!`; // Output: 'Hello, John!'
+					</pre>
+				- Multi-line strings:
+					<pre>
+						let message = `This is line 1
+						This is line 2`; // Output: 'This is line 1\nThis is line 2'
+					</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>7. How do you remove duplicates from an array?</h2>
+			<p>
+				<b>ANS:</b> To remove duplicates from an array, you can use:
+				- <code>Set</code> (ES6):
+					<pre>
+						let numbers = [1, 2, 2, 3, 4, 4];
+						let uniqueNumbers = [...new Set(numbers)]; // Output: [1, 2, 3, 4]
+					</pre>
+				- <code>filter()</code> method:
+					<pre>
+						let numbers = [1, 2, 2, 3, 4, 4];
+						let uniqueNumbers = numbers.filter((value, index, self) => self.indexOf(value) === index); // Output: [1, 2, 3, 4]
+					</pre>
+			</p>
+		</div>
+	
+	</section>
+
+	<section>
+		<h1>Control Structures and Error Handling</h1>
+	
+		<div>
+			<h2>1. How does JavaScript handle implicit type conversion?</h2>
+			<p>
+				<b>ANS:</b> JavaScript performs implicit type conversion (also known as type coercion) when an operation involves mismatched data types. For example:
+				- When a string and a number are added, JavaScript converts the number to a string.
+					<pre>
+						let result = '5' + 1; // Output: '51' (string)
+					</pre>
+				- When a string is used in a mathematical operation (except addition), JavaScript converts it to a number.
+					<pre>
+						let result = '5' - 1; // Output: 4 (number)
+					</pre>
+				- In logical operations, JavaScript converts values to boolean (truthy or falsy).
+			</p>
+		</div>
+	
+		<div>
+			<h2>2. What does `typeof` return for different data types?</h2>
+			<p>
+				<b>ANS:</b> The <code>typeof</code> operator returns a string representing the type of a variable or expression.
+				- <code>typeof 42</code> → 'number'
+				- <code>typeof 'Hello'</code> → 'string'
+				- <code>typeof true</code> → 'boolean'
+				- <code>typeof {}</code> → 'object'
+				- <code>typeof []</code> → 'object' (arrays are also objects in JavaScript)
+				- <code>typeof null</code> → 'object' (this is a known bug in JavaScript)
+				- <code>typeof undefined</code> → 'undefined'
+				- <code>typeof function() {}</code> → 'function'
+			</p>
+		</div>
+	
+		<div>
+			<h2>3. What is NaN, and how can you check if a value is NaN?</h2>
+			<p>
+				<b>ANS:</b> <code>NaN</code> stands for "Not-a-Number" and represents an invalid number. It results from operations like dividing zero by zero or trying to parse a non-numeric string into a number.
+				- Example:
+					<pre>
+						let result = 0 / 0; // Output: NaN
+					</pre>
+				- To check if a value is <code>NaN</code>, use <code>Number.isNaN()</code>:
+					<pre>
+						Number.isNaN(NaN); // Output: true
+						Number.isNaN(42);  // Output: false
+					</pre>
+				- <code>isNaN()</code> is a global function, but it has quirks with non-numeric values (like returning true for undefined or null). It's safer to use <code>Number.isNaN()</code>.
+			</p>
+		</div>
+	
+	</section>
+
+	<section>
+		<h1>Type Conversion and Comparison</h1>
+	
+		<div>
+			<h2>1. How does JavaScript handle implicit type conversion?</h2>
+			<p>
+				<b>ANS:</b> JavaScript automatically converts (coerces) data types when performing operations that involve mismatched types. This is called implicit type conversion. Some examples:
+				- When performing arithmetic with a string and a number, JavaScript will convert the number to a string for concatenation:
+					<pre>
+						let result = '5' + 1; // Output: '51' (string)
+					</pre>
+				- When performing a subtraction operation, JavaScript will convert the string to a number:
+					<pre>
+						let result = '5' - 1; // Output: 4 (number)
+					</pre>
+				- In boolean contexts, values like <code>null</code>, <code>undefined</code>, <code>NaN</code>, 0, and an empty string are considered falsy, while all other values are considered truthy.
+			</p>
+		</div>
+	
+		<div>
+			<h2>2. What does `typeof` return for different data types?</h2>
+			<p>
+				<b>ANS:</b> The <code>typeof</code> operator returns a string that represents the type of a variable or expression.
+				- <code>typeof 42</code> → 'number'
+				- <code>typeof 'Hello'</code> → 'string'
+				- <code>typeof true</code> → 'boolean'
+				- <code>typeof {}</code> → 'object'
+				- <code>typeof []</code> → 'object' (arrays are technically objects in JavaScript)
+				- <code>typeof null</code> → 'object' (this is a known bug in JavaScript)
+				- <code>typeof undefined</code> → 'undefined'
+				- <code>typeof function() {}</code> → 'function'
+			</p>
+		</div>
+	
+		<div>
+			<h2>3. What is NaN, and how can you check if a value is NaN?</h2>
+			<p>
+				<b>ANS:</b> <code>NaN</code> stands for "Not-a-Number" and represents a value that is not a valid number. It occurs in situations like dividing zero by zero or trying to parse a non-numeric string into a number.
+				- Example:
+					<pre>
+						let result = 0 / 0; // Output: NaN
+					</pre>
+				- To check if a value is <code>NaN</code>, use <code>Number.isNaN()</code>:
+					<pre>
+						Number.isNaN(NaN); // Output: true
+						Number.isNaN(42);  // Output: false
+					</pre>
+				- Using <code>isNaN()</code> is not always reliable, as it returns true for values that aren't numbers (like undefined or null), so it's better to use <code>Number.isNaN()</code>.
+			</p>
+		</div>
+	
+	</section>
+
+	<section>
+		<h1>Miscellaneous</h1>
+	
+		<div>
+			<h2>1. What is event delegation, and how does it work?</h2>
+			<p>
+				<b>ANS:</b> Event delegation is a technique in JavaScript where instead of attaching event listeners to individual elements, you attach a single event listener to a parent element. The parent listens for events on its child elements using the event's propagation (bubbling) mechanism. This reduces memory usage and improves performance, especially when dynamically adding elements.
+				- Example:
+					<pre>
+						document.querySelector('#parent').addEventListener('click', function(event) {
+							if (event.target.matches('.child')) {
+								console.log('Child element clicked');
+							}
+						});
+					</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>2. What are default parameters in JavaScript?</h2>
+			<p>
+				<b>ANS:</b> Default parameters allow you to set default values for function parameters in case they are not provided by the caller. If no argument is passed for the parameter, the default value will be used.
+				- Example:
+					<pre>
+						function greet(name = 'Guest') {
+							console.log('Hello, ' + name);
+						}
+						greet(); // Output: 'Hello, Guest'
+						greet('John'); // Output: 'Hello, John'
+					</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>3. What is the difference between synchronous and asynchronous programming?</h2>
+			<p>
+				<b>ANS:</b> 
+				- **Synchronous programming**: Operations are executed one after the other. Each task must complete before the next one starts.
+				- **Asynchronous programming**: Operations are executed independently of the main program flow. This allows for tasks to run in parallel without blocking the rest of the code.
+				- Example:
+					- **Synchronous**:
+						<pre>
+							console.log('Start');
+							console.log('End');
+						</pre>
+					- **Asynchronous**:
+						<pre>
+							console.log('Start');
+							setTimeout(() => console.log('Middle'), 0);
+							console.log('End');
+						</pre>
+						Output: 'Start', 'End', 'Middle'
+			</p>
+		</div>
+	
+		<div>
+			<h2>4. How does the `setTimeout` function work, and what is its use?</h2>
+			<p>
+				<b>ANS:</b> The <code>setTimeout()</code> function is used to execute a specified function or code block after a set amount of time (in milliseconds). It only runs once after the delay.
+				- Example:
+					<pre>
+						setTimeout(() => console.log('This will run after 2 seconds'), 2000);
+					</pre>
+				- Use case: Delaying the execution of a function, like showing a notification after a certain time.
+			</p>
+		</div>
+	
+		<div>
+			<h2>5. What is the purpose of `JSON.stringify()` and `JSON.parse()`?</h2>
+			<p>
+				<b>ANS:</b> 
+				- <code>JSON.stringify()</code> converts a JavaScript object or value to a JSON string, which can be stored or transmitted.
+					<pre>
+						const obj = { name: 'John', age: 30 };
+						const jsonString = JSON.stringify(obj); // Output: '{"name":"John","age":30}'
+					</pre>
+				- <code>JSON.parse()</code> converts a JSON string back into a JavaScript object.
+					<pre>
+						const jsonString = '{"name":"John","age":30}';
+						const obj = JSON.parse(jsonString); // Output: { name: 'John', age: 30 }
+					</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>6. How can you handle asynchronous code in JavaScript?</h2>
+			<p>
+				<b>ANS:</b> Asynchronous code in JavaScript can be handled using:
+				- **Callbacks**: Functions passed as arguments to other functions that are executed later.
+				- **Promises**: Objects representing the eventual completion (or failure) of an asynchronous operation. They have <code>.then()</code> and <code>.catch()</code> methods.
+				- **Async/Await**: Syntactic sugar over promises that makes asynchronous code look and behave like synchronous code.
+				- Example using promises:
+					<pre>
+						new Promise((resolve, reject) => {
+							setTimeout(() => resolve('Done!'), 1000);
+						}).then(result => console.log(result));
+					</pre>
+			</p>
+		</div>
+	
+		<div>
+			<h2>7. Explain the concept of the Event Loop in JavaScript.</h2>
+			<p>
+				<b>ANS:</b> The event loop is the mechanism that handles asynchronous code execution in JavaScript. JavaScript is single-threaded, so it can only execute one piece of code at a time. The event loop checks the call stack and the task queue:
+				- If the call stack is empty, it moves tasks from the task queue to the call stack for execution.
+				- This allows asynchronous operations (like <code>setTimeout()</code>, API calls, etc.) to run without blocking the execution of other code.
+			</p>
+		</div>
+	
+	</section>
+	
+	
+</body>
+</html>

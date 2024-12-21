@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>CSS assignment</title>
+</head>
+
+<body>
+	<section>
+		<h1>Basic CSS Questions</h1>
+
+		<div>
+			<h2>1. What is CSS, and how does it work with HTML?</h2>
+			<p>
+				<b>ANS:</b> CSS (Cascading Style Sheets) is a language used to style HTML elements. It controls the
+				layout, colors, fonts, and design of the web page. While HTML structures the content of a page, CSS
+				makes it look good.
+			</p>
+			<code>
+			&lt;style&gt;<br>
+			body {<br>
+				background-color: lightgray;<br>
+			}<br>
+			h1 {<br>
+				color: darkgreen;<br>
+			}<br>
+			p {<br>
+				font-size: 18px;<br>
+			}<br>
+			&lt;/style&gt;<br>
+			</code>
+		</div>
+
+		<div>
+			<h2>2. What is the difference between inline, internal, and external CSS?</h2>
+			<p>
+				<b>ANS:</b> Inline CSS is written directly within an HTML element using the style attribute. Internal
+				CSS is written inside a &lt;style&gt; tag within the head section of an HTML file. External CSS is
+				stored in a separate .css file and linked to the HTML file using a &lt;link&gt; tag.
+			</p>
+			<code>
+			&lt;!DOCTYPE html&gt;<br>
+			&lt;html&gt;<br>
+			&lt;head&gt;<br>
+			&lt;style&gt; /* Internal CSS */<br>
+			body { font-family: Arial; }<br>
+			&lt;/style&gt;<br>
+			&lt;link rel="stylesheet" href="styles.css"&gt; /* External CSS */<br>
+			&lt;/head&gt;<br>
+			&lt;body style="background-color: yellow;"&gt; /* Inline CSS */<br>
+			&lt;h1&gt;Hello&lt;/h1&gt;<br>
+			&lt;/body&gt;<br>
+			&lt;/html&gt;<br>
+			</code>
+		</div>
+
+		<div>
+			<h2>3. Explain the CSS box model. What properties does it consist of?</h2>
+			<p>
+				<b>ANS:</b> The CSS box model is a layout model that defines the space an element occupies on a page. It
+				consists of content, padding, border, and margin.
+			</p>
+			<code>
+			&lt;style&gt;<br>
+			div {<br>
+				width: 200px;<br>
+				padding: 10px;<br>
+				border: 5px solid black;<br>
+				margin: 20px;<br>
+			}<br>
+			&lt;/style&gt;<br>
+			</code>
+		</div>
+
+		<div>
+			<h2>4. What is specificity in CSS, and how does it affect styling?</h2>
+			<p>
+				<b>ANS:</b> Specificity is a calculation that determines which CSS rule takes precedence when multiple
+				rules target the same element. It is calculated based on selectors used (inline styles &gt; IDs &gt;
+				classes &gt; elements).
+			</p>
+			<code>
+			&lt;style&gt;<br>
+			#id { color: blue; }<br>
+			.class { color: red; }<br>
+			p { color: green; }<br>
+			&lt;/style&gt;<br>
+			</code>
+		</div>
+
+		<div>
+			<h2>5. How do CSS selectors work, and what are some common types of selectors?</h2>
+			<p>
+				<b>ANS:</b> CSS selectors target HTML elements based on their tag, ID, class, or attributes. Common
+				selectors include universal (*), type (h1), class (.className), ID (#idName), and attribute
+				([type="text"]).
+			</p>
+			<code>
+			&lt;style&gt;<br>
+			* { margin: 0; }<br>
+			h1 { font-size: 2em; }<br>
+			.className { color: orange; }<br>
+			#idName { background-color: pink; }<br>
+			[type="text"] { border: 1px solid gray; }<br>
+			&lt;/style&gt;<br>
+			</code>
+		</div>
+
+		<div>
+			<h2>6. What are pseudo-classes and pseudo-elements? Give examples of each.</h2>
+			<p>
+				<b>ANS:</b> Pseudo-classes define special states of elements (e.g., :hover). Pseudo-elements style parts
+				of elements (e.g., ::before). Examples: :hover for link hover effect, ::before to add content.
+			</p>
+			<code>
+			&lt;style&gt;<br>
+			a:hover { color: red; }<br>
+			p::before { content: "Read: "; }<br>
+			&lt;/style&gt;<br>
+			</code>
+		</div>
+
+		<div>
+			<h2>7. Explain the concept of inheritance in CSS.</h2>
+			<p>
+				<b>ANS:</b> Inheritance in CSS means certain properties (e.g., font-family, color) are automatically
+				passed down from parent elements to child elements.
+			</p>
+			<code>
+			&lt;style&gt;<br>
+			body { font-family: Arial; color: navy; }<br>
+			p { margin: 10px; }<br>
+			&lt;/style&gt;<br>
+			</code>
+		</div>
+
+		<div>
+			<h2>8. What is the `!important` rule in CSS, and when should you use it?</h2>
+			<p>
+				<b>ANS:</b> The `!important` rule overrides all other specificity rules, including inline styles. Use it
+				sparingly to avoid making code difficult to maintain.
+			</p>
+			<code>
+			&lt;style&gt;<br>
+			p { color: red !important; }<br>
+			p { color: green; } /* The color will still be red because of !important */<br>
+			&lt;/style&gt;<br>
+			</code>
+		</div>
+
+	</section>
+
+	<section>
+		<h1>Mostly Used CSS Properties</h1>
+
+		<div>
+			<h2>1. How does the <b>display</b> property work, and what are the different display values?</h2>
+			<p>
+				<b>ANS:</b> The <b>display</b> property defines how an element is displayed on the web page. Common
+				values include <b>block</b> (full width), <b>inline</b> (inline with other elements), <b>flex</b>
+				(flexbox
+				layout), and <b>none</b> (hides element).
+			</p>
+			<code>
+				div { <br>
+				display: flex; <br>
+				justify-content: center; <br>
+				} <br>
+				span { <br>
+				display: inline; <br>
+				} <br>
+			</code>
+		</div>
+
+		<div>
+			<h2>2. What is the <b>position</b> property, and how do different position values behave?</h2>
+			<p>
+				<b>ANS:</b> The <b>position</b> property defines how an element is placed on a page. <b>static</b>
+				(default), <b>relative</b> (relative to normal position), <b>absolute</b> (relative to nearest
+				positioned
+				ancestor), <b>fixed</b> (relative to viewport), and <b>sticky</b> (toggles between relative and fixed
+				based on
+				scroll).
+			</p>
+			<code>
+				div { <br>
+				position: fixed; <br>
+				top: 0; <br>
+				left: 0; <br>
+				} <br>
+			</code>
+		</div>
+
+		<div>
+			<h2>3. How do the <b>padding</b>, <b>margin</b>, and <b>border</b> properties work in CSS?</h2>
+			<p>
+				<b>ANS:</b> <b>padding</b> defines space between content and border. <b>margin</b> defines space outside
+				the border. <b>border</b> defines the edge around an element.
+			</p>
+			<code>
+				div { <br>
+				padding: 20px; <br>
+				margin: 15px; <br>
+				border: 2px solid black; <br>
+				} <br>
+			</code>
+		</div>
+
+		<div>
+			<h2>4. Explain the <b>flex</b> property. How do <b>flex-grow</b>, <b>flex-shrink</b>, and <b>flex-basis</b>
+				work?</h2>
+			<p>
+				<b>ANS:</b> The <b>flex</b> property defines how flexible an item is within a flex container.
+				<b>flex-grow</b> defines how much it grows relative to other items. <b>flex-shrink</b> defines how it
+				shrinks. <b>flex-basis</b> defines the initial size.
+			</p>
+			<code>
+				div { <br>
+				display: flex; <br>
+				} <br>
+				.item { <br>
+				flex: 1 1 auto; <br>
+				} <br>
+			</code>
+		</div>
+
+		<div>
+			<h2>5. What is the difference between <b>width</b>, <b>min-width</b>, and <b>max-width</b>?</h2>
+			<p>
+				<b>ANS:</b> <b>width</b> sets an element's fixed width. <b>min-width</b> defines the minimum width an
+				element can shrink to. <b>max-width</b> defines the maximum width an element can expand to.
+			</p>
+			<code>
+				div { <br>
+				width: 300px; <br>
+				min-width: 200px; <br>
+				max-width: 400px; <br>
+				} <br>
+			</code>
+		</div>
+
+		<div>
+			<h2>6. How does the <b>z-index</b> property work, and when would you use it?</h2>
+			<p>
+				<b>ANS:</b> The <b>z-index</b> property defines the stacking order of elements. Higher values are on
+				top. Used for overlapping elements.
+			</p>
+			<code>
+				div { <br>
+				position: absolute; <br>
+				z-index: 10; <br>
+				} <br>
+			</code>
+		</div>
+
+		<div>
+			<h2>7. What is the difference between the <b>opacity</b> and <b>visibility</b> properties?</h2>
+			<p>
+				<b>ANS:</b> <b>opacity</b> controls transparency (0 = invisible, 1 = fully visible). <b>visibility</b>
+				controls whether an element is visible or hidden (it still takes space when hidden).
+			</p>
+			<code>
+				div { <br>
+				opacity: 0.5; <br>
+				visibility: hidden; <br>
+				} <br>
+			</code>
+		</div>
+
+	</section>
+
+	<section>
+		<h1>CSS Layouts & Responsiveness</h1>
+
+		<div>
+			<h2>1. What is the difference between <b>flexbox</b> and <b>CSS Grid</b>, and when should you use each?</h2>
+			<p>
+				<b>ANS:</b> <b>flexbox</b> is one-dimensional (row or column), great for aligning items. <b>CSS Grid</b>
+				is
+				two-dimensional (rows and columns), ideal for complex layouts. Use <b>flexbox</b> for navbars or simple
+				alignments, and <b>grid</b> for full page layouts.
+			</p>
+			<code>
+				Flexbox: <br>
+				div { <br>
+				display: flex; <br>
+				} <br>
+				Grid: <br>
+				div { <br>
+				display: grid; <br>
+				grid-template-columns: repeat(3, 1fr); <br>
+				} <br>
+			</code>
+		</div>
+
+		<div>
+			<h2>2. Explain how to create a responsive layout using media queries.</h2>
+			<p>
+				<b>ANS:</b> Media queries allow you to apply styles based on screen size or device features.
+			</p>
+			<code>
+				@media (max-width: 600px) { <br>
+				div { <br>
+				font-size: 14px; <br>
+				} <br>
+				} <br>
+			</code>
+		</div>
+
+		<div>
+			<h2>3. How do you create a centered element in CSS? Provide multiple ways.</h2>
+			<p>
+				<b>ANS:</b> Centering options: <b>flexbox</b>, <b>grid</b>, <b>margin</b>, or positioning.
+			</p>
+			<code>
+				Flexbox: <br>
+				div { <br>
+				display: flex; <br>
+				justify-content: center; <br>
+				align-items: center; <br>
+				} <br>
+				Grid: <br>
+				div { <br>
+				display: grid; <br>
+				place-items: center; <br>
+				} <br>
+				Margin: <br>
+				div { <br>
+				margin: auto; <br>
+				} <br>
+			</code>
+		</div>
+
+		<div>
+			<h2>4. How does CSS Grid work, and what are <b>grid-template-rows</b> and <b>grid-template-columns</b>?</h2>
+			<p>
+				<b>ANS:</b> CSS Grid defines layouts using rows and columns. <b>grid-template-rows</b> and
+				<b>grid-template-columns</b> define the sizes of rows and columns.
+			</p>
+			<code>
+				div { <br>
+				display: grid; <br>
+				grid-template-rows: 100px auto; <br>
+				grid-template-columns: 1fr 2fr; <br>
+				} <br>
+			</code>
+		</div>
+
+		<div>
+			<h2>5. How does the <b>flex-direction</b> property work in Flexbox, and what are its values?</h2>
+			<p>
+				<b>ANS:</b> <b>flex-direction</b> defines the direction of flex items. Values: <b>row</b>,
+				<b>row-reverse</b>,
+				<b>column</b>, <b>column-reverse</b>.
+			</p>
+			<code>
+				div { <br>
+				display: flex; <br>
+				flex-direction: column; <br>
+				} <br>
+			</code>
+		</div>
+
+		<div>
+			<h2>6. What is a viewport, and how does it affect the responsiveness of a website?</h2>
+			<p>
+				<b>ANS:</b> A viewport is the visible area of a web page. Relative units like <b>%</b>, <b>vw</b>, and
+				<b>vh</b> help
+				maintain responsiveness across devices. Use media queries to adapt layout to screen sizes.
+			</p>
+		</div>
+
+		<div>
+			<h2>7. How would you create a sticky footer?</h2>
+			<p>
+				<b>ANS:</b> You can use <b>flexbox</b> or <b>positioning</b> to keep a footer at the bottom of the page.
+			</p>
+		</div>
+
+		<div>
+			<h2>8. What is mobile-first design in CSS?</h2>
+			<p>
+				<b>ANS:</b> Mobile-first design starts with styles optimized for small screens. Use media queries to
+				adjust
+				styles for larger screens.
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<h1>Advanced CSS Questions</h1>
+	
+		<div>
+			<h2>1. What do you understand by the universal selector?</h2>
+			<p>
+				<b>ANS:</b> The universal selector (<code>*</code>) selects all elements on a page, applying styles
+				globally.
+			</p>
+			<code>
+				* { <br>
+				margin: 0; <br>
+				padding: 0; <br>
+				box-sizing: border-box; <br>
+				} <br>
+			</code>
+		</div>
+	
+		<div>
+			<h2>2. What are CSS preprocessors, and how do they work? Give examples like SASS or LESS.</h2>
+			<p>
+				<b>ANS:</b> CSS preprocessors like <b>SASS</b> or <b>LESS</b> allow writing CSS with variables, nested
+				rules,
+				and functions. They compile into regular CSS.
+			</p>
+			<code>
+				/* SASS Example */ <br>
+				$primary-color: #3498db; <br>
+				body { <br>
+				background-color: $primary-color; <br>
+				} <br>
+			</code>
+		</div>
+	
+		<div>
+			<h2>3. Explain CSS custom properties (CSS variables) and their benefits.</h2>
+			<p>
+				<b>ANS:</b> CSS variables start with <code>--</code> and can be reused throughout a style sheet. They
+				make
+				CSS maintainable and dynamic.
+			</p>
+			<code>
+				:root { <br>
+				--main-color: #f39c12; <br>
+				} <br>
+				div { <br>
+				color: var(--main-color); <br>
+				} <br>
+			</code>
+		</div>
+	
+		<div>
+			<h2>4. How do CSS animations work, and how can you create a keyframe animation?</h2>
+			<p>
+				<b>ANS:</b> CSS animations use <code>@keyframes</code> to define animated states. Assign the animation
+				using
+				<code>animation-name</code> and <code>animation-duration</code>.
+			</p>
+			<code>
+				@keyframes slide { <br>
+				0% { transform: translateX(0); } <br>
+				100% { transform: translateX(100px); } <br>
+				} <br>
+				div { <br>
+				animation: slide 2s infinite; <br>
+				} <br>
+			</code>
+		</div>
+	
+		<div>
+			<h2>5. What are CSS transitions, and how are they different from animations?</h2>
+			<p>
+				<b>ANS:</b> Transitions smoothly animate changes between states triggered by events. Animations run
+				continuously or based on timing.
+			</p>
+			<code>
+				/* Transition Example */ <br>
+				div { <br>
+				transition: background-color 0.3s ease; <br>
+				} <br>
+				div:hover { <br>
+				background-color: #3498db; <br>
+				} <br>
+			</code>
+		</div>
+	
+		<div>
+			<h2>6. What is the difference between <code>rem</code>, <code>em</code>, and <code>px</code> units?</h2>
+			<p>
+				<b>ANS:</b> <code>px</code>: Absolute unit. <code>rem</code>: Relative to root font size.
+				<code>em</code>:
+				Relative to parent element's font size.
+			</p>
+			<code>
+				html { font-size: 16px; } <br>
+				div { font-size: 2rem; } /* 32px */ <br>
+				p { font-size: 1.5em; } /* 1.5 times the parent size */ <br>
+			</code>
+		</div>
+	
+		<div>
+			<h2>7. What is SVG, and how can it be used to create custom shapes?</h2>
+			<p>
+				<b>ANS:</b> SVG (Scalable Vector Graphics) is an XML format for drawing shapes. It's
+				resolution-independent
+				and can be inline in HTML or as files.
+			</p>
+			<code>
+				&lt;svg width="100" height="100"&gt; <br>
+				&lt;circle cx="50" cy="50" r="40" fill="blue" /&gt; <br>
+				&lt;/svg&gt;
+			</code>
+		</div>
+	
+	</section>
+	
+
+
+
+</body>
+
+</html>

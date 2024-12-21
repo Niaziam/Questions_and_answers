@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="CSS_assignment/style.css">
+	<title>HTML assignment</title>
+</head>
+<body>
+
+	<section>
+		<h1>Step 1: Basic HTML Questions</h1>
+
+		<div>
+			<h2>1. What is HTML? Explain its purpose & Basic Syntax of HTML</h2>
+			<p>
+				ANS: HTML (Hypertext Markup Language) is the standard language used to create webpages. Its purpose is
+				to
+				structure content on the web.
+			</p>
+			&lt;!DOCTYPE html&gt; <br>
+			&lt;html&gt; <br>
+			&lt;head&gt; <br>
+			&lt;title&gt;Page Title&lt;/title&gt; <br>
+			&lt;/head&gt; <br>
+			&lt;body&gt; <br>
+			&lt;h1&gt;Hello, World!&lt;/h1&gt; <br>
+			&lt;p&gt;Welcome to HTML basics.&lt;/p&gt; <br>
+			&lt;/body&gt; <br>
+			&lt;/html&gt; <br>
+		</div>
+
+		<div>
+			<h2>2. What are HTML tags? How are they structured? Give Us 5 Tags As A Example</h2>
+			<p>
+				HTML tags define elements in a webpage. Tags are written inside angle brackets (<code>&lt;&gt;</code>)
+				and usually come in pairs with an opening and a closing tag.
+				Example of tags:
+			</p>
+			<ul>
+				<li>&lt;h1&gt; - Defines a heading</li>
+				<li>&lt;p&gt; - Defines a paragraph</li>
+				<li>&lt;a&gt; - Defines a hyperlink</li>
+				<li>&lt;img&gt; - Defines an image</li>
+				<li>&lt;ul&gt; - Defines an unordered list</li>
+			</ul>
+		</div>
+
+		<div>
+			<h1>Difference Between &lt;head&gt;, &lt;body&gt;, &lt;html&gt; Tags &amp; The Role of &lt;!DOCTYPE html&gt;
+			</h1>
+
+			<h2>1. &lt;html&gt; Tag</h2>
+			<p>
+				The <code>&lt;html&gt;</code> tag is the root element of an HTML document. It wraps all the content on
+				the webpage, including both
+				the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections.
+			</p>
+
+			<h2>2. &lt;head&gt; Tag</h2>
+			<p>
+				The <code>&lt;head&gt;</code> tag contains metadata about the webpage. Metadata includes the title,
+				character encoding,
+				stylesheets, and other information that isn't displayed directly on the webpage.
+			</p>
+			<p>Example: <code>&lt;title&gt;Page Title&lt;/title&gt;</code> defines the title displayed on the browser
+				tab.</p>
+
+			<h2>3. &lt;body&gt; Tag</h2>
+			<p>
+				The <code>&lt;body&gt;</code> tag contains the visible content of the webpage. This includes text,
+				images, videos, and other media elements.
+			</p>
+			<p>Example: <code>&lt;h1&gt;Hello, World!&lt;/h1&gt;</code> is a heading visible on the page.</p>
+
+			<h2>4. &lt;!DOCTYPE html&gt; Declaration</h2>
+			<p>
+				The <code>&lt;!DOCTYPE html&gt;</code> declaration is placed at the top of an HTML document. It tells
+				the browser that the document
+				is written in HTML5. This ensures consistent rendering of the webpage across different browsers.
+			</p>
+		</div>
+
+		<div>
+			<h2>4. Describe the function of the &lt;title&gt; tag. Where does it appear With Example</h2>
+			<p>
+				The <code>&lt;title&gt;</code> tag defines the title of the webpage, which appears in the browser tab.
+				Example: <code>&lt;title&gt;My Awesome Page&lt;/title&gt;</code> will display "My Awesome Page" in the
+				tab.
+			</p>
+		</div>
+
+		<div>
+			<h2>5. How do you add comments in HTML, and why are they useful?</h2>
+			<p>
+				Comments in HTML are added using <code>&lt;!-- comment --&gt;</code>. They are useful for leaving notes
+				or explanations for developers and are not visible in the browser.
+			</p>
+			<p>Example: <code>&lt;!-- This is a comment --&gt;</code></p>
+		</div>
+	</section>
+
+
+	<section>
+		<h1>Step 2: HTML Elements and Attributes</h1>
+
+		<div>
+			<h2>1. Difference Between an HTML Element and an HTML Attribute</h2>
+			<p>
+				An <b>HTML element</b> is the entire structure, including the opening tag, content, and closing tag. An
+				<b>HTML attribute</b> provides additional information or functionality for an element.
+			</p>
+			<p><b>Example:</b></p>
+			<p>HTML Element: <code>&lt;h1&gt;Welcome&lt;/h1&gt;</code></p>
+			<p>HTML Attribute: <code>&lt;p style="color:red;"&gt;This is red text.&lt;/p&gt;</code> (Here, <b>style</b>
+				is the attribute)</p>
+		</div>
+
+		<div>
+			<h2>2. Global Attributes in HTML</h2>
+			<p>Global attributes can be used on any HTML element. Examples include:</p>
+			<ul>
+				<li><b>class:</b> Groups elements for styling.</li>
+				<li><b>id:</b> Provides a unique identifier for an element.</li>
+				<li><b>style:</b> Adds inline CSS styling to an element.</li>
+				<li><b>title:</b> Adds a tooltip when hovering over the element.</li>
+			</ul>
+			<p><b>Example:</b></p>
+			<p><code>&lt;div class="container" id="main" style="color:blue;" title="Hover text"&gt;Sample Text&lt;/div&gt;</code>
+			</p>
+		</div>
+
+		<div>
+			<h2>3. Purpose of the <b>alt</b> Attribute in the <code>&lt;img&gt;</code> Tag</h2>
+			<p>
+				The <b>alt</b> attribute provides alternative text for an image. It's displayed if the image cannot load
+				or
+				is read by screen readers for accessibility.
+			</p>
+			<p><b>Example:</b></p>
+			<p><code>&lt;img src="image.jpg" alt="A beautiful sunset"&gt;</code></p>
+		</div>
+
+		<div>
+			<h2>4. Describe the href Attribute in the <code>&lt;a&gt;</code> Tag</h2>
+			<p>
+				The `href` attribute specifies the URL of the page the link points to. It's essential for creating
+				hyperlinks.
+			</p>
+			<p><b>Example:</b></p>
+			<p><code>&lt;a href="https://tanimImage.com"&gt;Visit Example&lt;/a&gt;</code></p>
+		</div>
+
+		<div>
+			<h2>5. The <b>target</b> Attribute in the <code>&lt;a&gt;</code> Tag</h2>
+			<p>
+				The `target` attribute specifies where to open the linked document. The `_blank` value opens the link in
+				a new tab or window.
+			</p>
+			<p><b>Example:</b></p>
+			<p><code>&lt;a href="https://tanimImage.com" target="_blank"&gt;Open in New Tab&lt;/a&gt;</code></p>
+		</div>
+
+	</section>
+
+	<section>
+		<h1>Step 3: Common HTML Tags</h1>
+
+		<div>
+			<h2>1. How to Add Favicon in HTML & Why?</h2>
+			<p>
+				To add a favicon, you use the <code>&lt;link&gt;</code> tag inside the
+				<code>&lt;head&gt;</code> section.
+				Example: <code>&lt;link rel="icon" href="favicon.ico"&gt;</code>.
+			</p>
+			<p>It helps make the website recognizable and adds a professional touch to the web page.</p>
+		</div>
+
+		<div>
+			<h2>2. What is Formatting in HTML?</h2>
+			<p>
+				Formatting in HTML refers to the way text is displayed. It uses tags like <code>&lt;b&gt;</code> for
+				bold, <code>&lt;i&gt;</code> for italic, and <code>&lt;u&gt;</code> for underline.
+				Example: <code>&lt;b&gt;Bold Text&lt;/b&gt;</code>, <code>&lt;i&gt;Italic Text&lt;/i&gt;</code>.
+			</p>
+		</div>
+
+		<div>
+			<h2>3. What Are Inline and Block Elements in HTML5? Give Us the Proper Explanation with Example</h2>
+			<p>
+				<b>Inline elements:</b> only take up as much space as their content requires. They don’t break to the
+				next
+				line.
+				Example: <code>&lt;a&gt;</code>, <code>&lt;span&gt;</code>.
+			</p>
+			<p>
+				<b>Block elements:</b> take up the full width of their parent container and start on a new line.
+				Example: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>.
+			</p>
+		</div>
+
+		<div>
+			<h2>4. What is a Marquee?</h2>
+			<p>
+				The <code>&lt;marquee&gt;</code> tag makes text scroll horizontally or vertically on the screen.
+				Example: <code>&lt;marquee&gt;This is a scrolling text&lt;/marquee&gt;</code>.
+			</p>
+		</div>
+
+		<div>
+			<h2>5. Explain the Difference Between &lt;p&gt;, &lt;span&gt;, and &lt;div&gt; Tags. When Would You Use
+				Each?</h2>
+			<p>
+				<b>&lt;p&gt;</b> is a block-level tag used for paragraphs. It creates a new line before and after its
+				content.
+				Example: <code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code>.
+			</p>
+			<p>
+				<b>&lt;span&gt;</b> is an inline element, typically used to style a portion of text within other
+				elements.
+				Example: <code>&lt;span style="color:red;"&gt;This is red text&lt;/span&gt;</code>.
+			</p>
+			<p>
+				<b>&lt;div&gt;</b> is a block-level container used to group elements together. It has no visual impact
+				unless styled.
+				Example: <code>&lt;div&gt;Content here&lt;/div&gt;</code>.
+			</p>
+		</div>
+
+		<div>
+			<h2>6. Describe the &lt;ul&gt;, &lt;ol&gt;, and &lt;li&gt; Tags for Creating Lists</h2>
+			<p>
+				<b>&lt;ul&gt;</b>: Unordered list, typically displayed with bullets.
+				Example: <code>&lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;/ul&gt;</code>.
+			</p>
+			<p>
+				<b>&lt;ol&gt;</b>: Ordered list, displayed with numbers or letters.
+				Example: <code>&lt;ol&gt;&lt;li&gt;First item&lt;/li&gt;&lt;/ol&gt;</code>.
+			</p>
+			<p>
+				<b>&lt;li&gt;</b>: List item, used inside <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>.
+				Example: <code>&lt;li&gt;Item 1&lt;/li&gt;</code>.
+			</p>
+		</div>
+
+		<div>
+			<h2>7. Describe How &lt;input&gt; Works and Some of Its Types, Such as text, radio, and checkbox</h2>
+			<p>
+				The <code>&lt;input&gt;</code> tag is used to create interactive controls in a form. Examples of input
+				types:
+			</p>
+			<ul>
+				<li><b>text:</b> For text fields. Example: <code>&lt;input type="text"&gt;</code>.</li>
+				<li><b>radio:</b> For radio buttons, allowing one selection in a group. Example:
+					<code>&lt;input type="radio"&gt;</code>.
+				</li>
+				<li><b>checkbox:</b> For checkboxes, allowing multiple selections. Example:
+					<code>&lt;input type="checkbox"&gt;</code>.
+				</li>
+			</ul>
+		</div>
+
+		<div>
+			<h2>8. What Are &lt;button&gt;, &lt;textarea&gt;, and &lt;select&gt; Tags, and How Do They Function?</h2>
+			<p>
+				<b>&lt;button&gt;</b>: Defines a clickable button. Example:
+				<code>&lt;button&gt;Click Me&lt;/button&gt;</code>.
+			</p>
+			<p>
+				<b>&lt;textarea&gt;</b>: Defines a multi-line text input area. Example:
+				<code>&lt;textarea&gt;Default text&lt;/textarea&gt;</code>.
+			</p>
+			<p>
+				<b>&lt;select&gt;</b>: Defines a drop-down list. Example:
+				<code>&lt;select&gt;&lt;option&gt;Option 1&lt;/option&gt;&lt;/select&gt;</code>.
+			</p>
+		</div>
+
+		<div>
+			<h2>9. How to Link CSS to HTML?</h2>
+			<p>
+				CSS can be linked to an HTML file using the <code>&lt;link&gt;</code> tag in the
+				<code>&lt;head&gt;</code> section.
+				Example: <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>.
+			</p>
+		</div>
+
+		<div>
+			<h2>10. What is the &lt;label&gt; Tag, and How Is It Associated with Form Inputs?</h2>
+			<p>
+				The <code>&lt;label&gt;</code> tag is used to define labels for form elements. It improves
+				accessibility.
+				Example: <code>&lt;label for="name"&gt;Name&lt;/label&gt;&lt;input type="text" id="name"&gt;</code>.
+			</p>
+		</div>
+
+	</section>
+
+	<section>
+		<h1>Step 4: Advanced HTML Concepts</h1>
+
+		<div>
+			<h2>1. What is the &lt;iframe&gt; Tag, and What Are Some Common Attributes Used With It?</h2>
+			<p>
+				The <b>&lt;iframe&gt;</b> tag is used to embed another HTML page or external content into a webpage.
+				Common attributes:
+			<ul>
+				<li><b>src:</b> URL of the embedded content.</li>
+				<li><b>width:</b> Width of the iframe.</li>
+				<li><b>height:</b> Height of the iframe.</li>
+				<li><b>frameborder:</b> Defines whether the border is displayed (obsolete in modern HTML).</li>
+			</ul>
+			</p>
+		</div>
+
+		<div>
+			<h2>2. Describe How the &lt;audio&gt; and &lt;video&gt; Tags Work</h2>
+			<p>
+				<b>&lt;audio&gt;</b> and <b>&lt;video&gt;</b> tags are used to embed audio and video files respectively.
+				Common attributes:
+			<ul>
+				<li><b>controls:</b> Adds play, pause, and volume controls.</li>
+				<li><b>autoplay:</b> Automatically starts playback when the page loads.</li>
+				<li><b>loop:</b> Replays the media in a loop.</li>
+			</ul>
+			Example:
+			<code>&lt;audio controls&gt;&lt;source src="audio.mp3" type="audio/mpeg"&gt;&lt;/audio&gt;</code>
+			<code>&lt;video controls&gt;&lt;source src="video.mp4" type="video/mp4"&gt;&lt;/video&gt;</code>
+			</p>
+		</div>
+
+		<div>
+			<h2>3. Explain the &lt;picture&gt; Tag and Its Usage in Responsive Design</h2>
+			<p>
+				The <b>&lt;picture&gt;</b> tag is used for responsive images, allowing multiple source images to be
+				defined for different screen sizes or resolutions.
+				Example:
+				<code>
+                    &lt;picture&gt;
+                        &lt;source media="(max-width: 600px)" srcset="small.jpg"&gt;
+                        &lt;source media="(min-width: 601px)" srcset="large.jpg"&gt;
+                        &lt;img src="default.jpg" alt="Responsive Image"&gt;
+                    &lt;/picture&gt;
+                </code>
+			</p>
+		</div>
+
+		<div>
+			<h2>4. Design a Basic Form</h2>
+			<form>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name"><br><br>
+
+				<p>Gender:</p>
+				<input type="radio" id="male" name="gender" value="male">
+				<label for="male">Male</label><br>
+				<input type="radio" id="female" name="gender" value="female">
+				<label for="female">Female</label><br><br>
+
+				<input type="checkbox" id="terms" name="terms">
+				<label for="terms">Accept Terms & Conditions</label><br><br>
+
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+
+		<div>
+			<h2>5. Embed a Responsive YouTube Video</h2>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/qsKoT__cmAw?si=q_9mdge5BY15IhGm"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+
+		<div>
+			<h2>6. Collapsible/Expandable Section</h2>
+			<details>
+				<summary>Click to Expand</summary>
+				<p>This is the content inside the collapsible section.</p>
+			</details>
+		</div>
+
+		<div>
+			<h2>7. Simple Navigation Bar</h2>
+			<nav
+				style="background-color: rgba(0, 0, 0, 0.586); display: flex; justify-content: space-between; padding:0 10px; border-radius: 10px;">
+				<p style="color: white;">Tanim</p>
+				<ul style="display: flex; list-style: none; gap: 10px;">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<input type="text" placeholder="Search">
+			</nav>
+		</div>
+
+		<div>
+			<h2>8. Complex Table with Merged Cells</h2>
+			<table border="1">
+				<caption>Complex Table Example</caption>
+				<thead>
+					<tr>
+						<th>Header 1</th>
+						<th colspan="2">Header 2</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="2">Rowspan Example</td>
+						<td>Cell 2</td>
+						<td>Cell 3</td>
+					</tr>
+					<tr>
+						<td>Cell 4</td>
+						<td>Cell 5</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">Footer Information</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+
+		<div>
+			<h2>9. Simple Webpage Layout</h2>
+			<!-- Header Section -->
+			<header>
+				<h1>Welcome to My Webpage</h1>
+				<nav>
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main Section -->
+			<main>
+				<h2>Home</h2>
+				<p>This is the home section where you can find the introduction and main content.</p>
+			</main>
+
+			<!-- Footer Section -->
+			<footer>
+				<p>&copy; 2024 My Webpage. All rights reserved.</p>
+			</footer>
+		</div>
+
+		<div>
+			<h2>10. My Favourite 10 HTML Tags</h2>
+			<ol>
+				<li>
+					<b><code>&lt;h1&gt; to &lt;h6&gt;</code>:</b> I love all heading tags because they were the first
+					HTML tags I ever used, marking the beginning of my coding journey.
+				</li>
+				<li>
+					<b><code>&lt;a&gt;</code>:</b> The anchor tag is amazing because it lets me link anything,
+					connecting my webpage to the world.
+				</li>
+				<li>
+					<b><code>&lt;ul&gt; and &lt;ol&gt;</code>:</b> I love these list tags because they help me create
+					neat, organized lists easily.
+				</li>
+				<li>
+					<b><code>&lt;img&gt;</code>:</b> This tag is great because I can show my images, adding life to my
+					webpages.
+				</li>
+				<li>
+					<b><code>&lt;video&gt;</code>:</b> I love the video tag because it allows me to embed and share
+					videos right on my site.
+				</li>
+				<li>
+					<b><code>&lt;textarea&gt;</code>:</b> This tag is awesome for adding comment sections, giving users
+					a way to share their thoughts.
+				</li>
+				<li>
+					<b><code>&lt;input&gt;</code>:</b> I love all input tags because they let me collect information and
+					see some amazing outputs from my forms.
+				</li>
+				<li>
+					<b><code>&lt;code&gt;</code>:</b> This tag is perfect for showing my code snippets on a blog or
+					website, making it a must for tech pages.
+				</li>
+				<li>
+					<b><code>&lt;iframe&gt;</code>:</b> I love this tag because I can embed external content, like
+					YouTube videos, seamlessly into my page.
+				</li>
+				<li>
+					<b><code>&lt;nav&gt;</code>:</b> This is my additional pick because it helps me create clean and
+					accessible navigation bars, which are vital for any website.
+				</li>
+			</ol>
+		</div>
+	</section>
+
+</body>
+
+</html>
